@@ -1,0 +1,10 @@
+{
+"name": "Nom Prénom",
+"photo": "photo.jpg",
+"bio": "Chercheur en informatique spécialisé en ...",
+"contact": {
+"email": "prenom.nom@universite.fr",
+"github": "https://github.com/username",
+"orcid": "https://orcid.org/0000-0000"
+}
+}

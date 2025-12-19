@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Q = arrière-plan */
+#Q {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+  z-index: -1;
+}
+
+/* P = conteneur centré */
+#P {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+/* Carte blanche */
+#P-inner {
+  display: flex;
+  width: 66%;
+  min-height: 90vh;
+  background: white;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  border-radius: 8px;
+}
+
+/* MENU : dans P, taille auto */
+#menu {
+  position: sticky;      /* reste visible au scroll */
+  top: 40px;
+  align-self: flex-start;
+
+  padding: 20px 25px;
+  background: #f5f7fa;
+  border-right: 1px solid #ddd;
+
+  width: fit-content;
+}
+
+/* Liens du menu */
+#menu a {
+  display: block;
+  margin-bottom: 15px;
+  color: #203a43;
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+#menu a:hover {
+  text-decoration: underline;
+}
+
+/* Contenu */
+#content {
+  padding: 40px;
+  flex: 1;
+}
+
+h1, h2 {
+  color: #203a43;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  #P-inner {
+    flex-direction: column;
+    width: 95%;
+  }
+
+  #menu {
+    position: relative;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+}
