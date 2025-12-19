@@ -74,11 +74,13 @@ function renderCVSection(title, items) {
 
 async function loadCV() {
     loadMenu();
+    
+    /*
     const container = document.getElementById("content");
     const data = await fetch("data/cv.json").then(r => r.json());
+    */
     
-    
-    container.innerHTML = `<h1>Curriculum Vitae</h1>
+     document.getElementById("profile").innerHTML = `<h1>Curriculum Vitae</h1>
 
                 <section class="cv-section">
                     <h2>Formation</h2>
