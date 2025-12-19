@@ -78,3 +78,38 @@ h1, h2 {
     border-bottom: 1px solid #ddd;
   }
 }
+
+.ticket {
+  background: #f8f9fb;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  border-left: 4px solid var(--accent);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ticket:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+
+.ticket h3 {
+  margin: 0 0 6px 0;
+  color: #203a43;
+}
+
+.ticket .meta {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 6px;
+}
+
+.ticket .description {
+  margin-top: 6px;
+}
+
+.ticket.cv { --accent: #3498db; }
+.ticket.teaching { --accent: #27ae60; }
+.ticket.publication { --accent: #e74c3c; }
+

@@ -1,7 +1,12 @@
 {
-"preprints": [
-{"title": "Preprint A", "authors": "Nom et al.", "venue": "arXiv", "year": 2024, "pdf": "#"}
-],
-"journals": [],
-"conferences": []
+  "preprints": [
+    {
+      "title": "Transformer Architectures for Edge Computing",
+      "authors": "Nom, Auteur",
+      "venue": "arXiv",
+      "year": 2024,
+      "pdf": "#"
+    }
+  ]
 }
+
