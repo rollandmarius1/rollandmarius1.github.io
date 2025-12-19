@@ -1,18 +1,18 @@
 {
   "education": [
     {
-      "title": "Doctorat en Informatique",
-      "period": "2015 – 2018",
-      "institution": "Université de Paris",
-      "description": "Thèse sur l’optimisation des réseaux de neurones."
+      "title": "TADA",
+      "period": "TBA",
+      "institution": "TBA",
+      "description": "TBA"
     }
   ],
   "experience": [
     {
-      "title": "Maître de Conférences",
-      "period": "2019 – présent",
-      "institution": "Université de Paris",
-      "description": "Enseignement et recherche en IA."
+      "title": "TBA",
+      "period": "TBA",
+      "institution": "TBA",
+      "description": "TBA"
     }
   ]
 }

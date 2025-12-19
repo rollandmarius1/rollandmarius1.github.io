@@ -80,7 +80,7 @@ async function loadCV() {
     const data = await fetch("data/cv.json").then(r => r.json());
     */
     
-     document.getElementById("profile").innerHTML = `<h1>Curriculum Vitae</h1>
+     document.getElementById("content").innerHTML = `<h1>Curriculum Vitae</h1>
 
                 <section class="cv-section">
                     <h2>Formation</h2>
