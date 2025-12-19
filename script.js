@@ -28,7 +28,8 @@ function renderCVSection(title, items) {
     html += `
       <div class="ticket cv">
         <h3>${item.title}</h3>
-        <div class="meta">${item.period} — ${item.institution}</div>
+        <div class="period">${item.period}</div>
+        <div class="institution">${item.institution}</div>
         <div class="description">${item.description}</div>
       </div>
     `;
@@ -52,6 +53,7 @@ async function loadCV() {
 
 
 
+
 async function loadTeaching() {
   loadMenu();
   const container = document.getElementById("content");
@@ -63,17 +65,17 @@ async function loadTeaching() {
     html += `<h2>${year}</h2>`;
     data[year].forEach(c => {
       html += `
-        <div class="ticket teaching">
+        <div class="teaching-item">
           <h3>${c.course}</h3>
-          <div class="meta">
-            Niveau : ${c.level} · Volume : ${c.hours}
-          </div>
-          <div class="description">${c.description}</div>
+          <div class="teaching-meta">
+                <span><strong>Niveau:</strong> ${c.level}3</span>
+                <span><strong>Volume:</strong> ${c.hours}</span>
+            </div>
+            <div class="description">${c.description}</div>
         </div>
       `;
     });
   }
-
   container.innerHTML = html;
 }
 
@@ -87,14 +89,13 @@ function renderPublications(title, list) {
   let html = `<h2>${title}</h2>`;
   list.forEach(p => {
     html += `
-      <div class="ticket publication">
-        <h3>${p.title}</h3>
-        <div class="meta">
-          ${p.authors}<br>
-          <em>${p.venue}</em> · ${p.year}
+        <div class="publication-item">
+            <div class="title">${p.title}</div>
+            <div class="authors"> ${p.authors}</div>
+            <div class="journal"> ${p.journal}</div>
+            <div class="year">${p.year}</div>
+            <a href=${p.pdf} class="pdf-link">📄 PDF</a>
         </div>
-        <a href="${p.pdf}" target="_blank">📄 PDF</a>
-      </div>
     `;
   });
   return html;

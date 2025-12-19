@@ -28,6 +28,30 @@ body {
   border-radius: 8px;
 }
 
+
+.links-list {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.links-list a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+ .links-list a:hover {
+  background-color: #2980b9;
+}
+
+
+
 /* MENU : dans P, taille auto */
 #menu {
   position: sticky;      /* reste visible au scroll */
@@ -79,37 +103,44 @@ h1, h2 {
   }
 }
 
-.ticket {
-  background: #f8f9fb;
-  border-radius: 8px;
-  padding: 16px 20px;
-  margin-bottom: 16px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
-  border-left: 4px solid var(--accent);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+.cv-item, .teaching-item, .publication-item {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 5px;
 }
 
-.ticket:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+.cv-item {
+  border-left: 3px solid #3498db;
 }
 
-.ticket h3 {
-  margin: 0 0 6px 0;
-  color: #203a43;
+.teaching-item {
+  border-left: 3px solid #27ae60;
 }
 
-.ticket .meta {
+.publication-item {
+  border-left: 3px solid #e74c3c;
+} 
+
+.cv-item h3, .teaching-item h3, .publication-item .title {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+  
+.period, .teaching-meta {
+  color: #7f8c8d;
   font-size: 0.9rem;
-  color: #6c757d;
-  margin-bottom: 6px;
+  margin-bottom: 0.3rem;
 }
 
-.ticket .description {
-  margin-top: 6px;
+.institution, .journal {
+  color: #34495e;
+  font-style: italic;
 }
 
-.ticket.cv { --accent: #3498db; }
-.ticket.teaching { --accent: #27ae60; }
-.ticket.publication { --accent: #e74c3c; }
-
+.teaching-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}

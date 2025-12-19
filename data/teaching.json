@@ -1,11 +1,12 @@
 {
-  "2024-2025": [
-    {
-      "course": "Algorithmique Avancée",
-      "level": "M1",
-      "hours": "24h CM + 24h TD",
-      "description": "Graphes, complexité, programmation dynamique."
-    }
-  ]
+	"2024": [
+		{
+			"year" : "2024-",
+			"course": "Algorithmique Avancée",
+			"level": "M1",
+			"hours": "24h CM + 24h TD",
+			"description": "Graphes, complexité, programmation dynamique."
+		}
+	]
 }
 
