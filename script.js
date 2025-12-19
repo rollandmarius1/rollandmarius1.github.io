@@ -15,21 +15,21 @@ async function loadProfile() {
                         <div class="profile-photo"></div>
                         <div class="profile-info">
                             <h1>Dr. Prénom Nom</h1>
-                            <p class="profile-title">Maître de Conférences en Informatique</p>
-                            <p class="profile-affiliation">Université de Paris, Laboratoire LIPN</p>
+                            <p class="profile-title">Doctorant</p>
+                            <p class="profile-affiliation">CNRS, LIS, Marseille</p>
                         </div>
                     </div>
 
                     <div class="profile-content">
                         <h2>À propos</h2>
-                        <p>Je suis chercheur en informatique spécialisé en intelligence artificielle et apprentissage automatique. Mes recherches portent principalement sur les réseaux de neurones profonds et leur application aux systèmes embarqués. J'enseigne également plusieurs cours de master en machine learning et algorithmes avancés.</p>
+                        <p>Je suis chercheur en informatique .</p>
 
                         <h2>Coordonnées</h2>
                         <div class="contact-info">
                             <p><strong>📧 Email:</strong> prenom.nom@univ-paris.fr</p>
                             <p><strong>📞 Téléphone:</strong> +33 1 23 45 67 89</p>
                             <p><strong>🏢 Bureau:</strong> Bâtiment A, Bureau 305</p>
-                            <p><strong>📍 Adresse:</strong> Département Informatique, Université de Paris</p>
+                            <p><strong>📍 Adresse:</strong> Département Informatique, Aix-Marseille Université</p>
                         </div>
 
                         <h2>Liens</h2>
@@ -73,15 +73,86 @@ function renderCVSection(title, items) {
 }
 
 async function loadCV() {
-  loadMenu();
-  const container = document.getElementById("content");
-  const data = await fetch("data/cv.json").then(r => r.json());
+    loadMenu();
+    const container = document.getElementById("content");
+    const data = await fetch("data/cv.json").then(r => r.json());
+    
+    
+    container.innerHTML = `<h1>Curriculum Vitae</h1>
 
-  container.innerHTML = `
+                <section class="cv-section">
+                    <h2>Formation</h2>
+                    <div class="cv-item">
+                        <h3>Doctorat en Informatique</h3>
+                        <div class="period">2023 - 2026</div>
+                        <div class="institution">CNRS, Aix-Marseille Université</div>
+                        <div class="description">TODO</div>
+                    </div>
+                    <div class="cv-item">
+                        <h3>Master Informatique </h3>
+                        <div class="period">2021 - 2023</div>
+                        <div class="institution">Aix-Marseille Université</div>
+                        <div class="description">Parcours Informatiques et Mathématique Discretes, Mention très bien.</div>
+                    </div>
+                </section>
+
+                <section class="cv-section">
+                    <h2>Expérience Professionnelle</h2>
+                    <div class="cv-item">
+                        <h3>TODO</h3>
+                        <div class="period">TODO</div>
+                        <div class="institution">TODO</div>
+                        <div class="description">TODO</div>
+                    </div>
+                    <div class="cv-item">
+                        <h3>Post-doctorant</h3>
+                        <div class="period">TODO</div>
+                        <div class="institution">TODO</div>
+                        <div class="description">TODO.</div>
+                    </div>
+                </section>
+
+                <section class="cv-section">
+                    <h2>Compétences</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>Programmation</h3>
+                            <ul>
+                                <li>Python</li>
+                                <li>Java</li>
+                                <li>C/C++</li>
+                                <li>JavaScript</li>
+                            </ul>
+                        </div>
+                     
+                        <div class="skill-category">
+                            <h3>Outils</h3>
+                            <ul>
+                                <li>Git / GitHub</li>
+                                <li>LaTeX</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="cv-section">
+                    <h2>Langues</h2>
+                    <div class="languages-list">
+                        <div class="language-item">
+                            <h3>Français</h3>
+                            <div class="level">Langue maternelle</div>
+                        </div>
+                        <div class="language-item">
+                            <h3>Anglais</h3>
+                            <div class="level">Intermédiaire (B1)</div>
+                        </div>
+                    </div>
+                </section>`
+    /*`
     <h1>Curriculum Vitae</h1>
     ${renderCVSection("Formation", data.education)}
     ${renderCVSection("Expérience professionnelle", data.experience)}
-  `;
+    `;*/
 }
 
 
