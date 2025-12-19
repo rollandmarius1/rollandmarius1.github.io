@@ -1,20 +1,55 @@
 function loadMenu() {
-document.getElementById("menu").innerHTML = `
-<a href="index.html">Accueil</a>
-<a href="cv.html">CV</a>
-<a href="teaching.html">Enseignements</a>
-<a href="publications.html">Publications</a>`;
+    document.getElementById("menu").innerHTML = `
+    <a href="index.html">🏠 Accueil</a>
+    <a href="cv.html">📄 CV<</a>
+    <a href="teaching.html">👨‍🏫 Enseignements</a>
+    <a href="publications.html">📚 Publications</a>`;
 }
 
 
 async function loadProfile() {
-loadMenu();
-const data = await fetch("data/profile.json").then(r => r.json());
-document.getElementById("profile").innerHTML = `
-<h1>${data.name}</h1>
-<img src="${data.photo}" class="photo">
-<p>${data.bio}</p>
-<p>${data.contact.email}</p>`;
+    loadMenu();
+    document.getElementById("profile").innerHTML = `
+     <section class="profile-section">
+                    <div class="profile-header">
+                        <div class="profile-photo"></div>
+                        <div class="profile-info">
+                            <h1>Dr. Prénom Nom</h1>
+                            <p class="profile-title">Maître de Conférences en Informatique</p>
+                            <p class="profile-affiliation">Université de Paris, Laboratoire LIPN</p>
+                        </div>
+                    </div>
+
+                    <div class="profile-content">
+                        <h2>À propos</h2>
+                        <p>Je suis chercheur en informatique spécialisé en intelligence artificielle et apprentissage automatique. Mes recherches portent principalement sur les réseaux de neurones profonds et leur application aux systèmes embarqués. J'enseigne également plusieurs cours de master en machine learning et algorithmes avancés.</p>
+
+                        <h2>Coordonnées</h2>
+                        <div class="contact-info">
+                            <p><strong>📧 Email:</strong> prenom.nom@univ-paris.fr</p>
+                            <p><strong>📞 Téléphone:</strong> +33 1 23 45 67 89</p>
+                            <p><strong>🏢 Bureau:</strong> Bâtiment A, Bureau 305</p>
+                            <p><strong>📍 Adresse:</strong> Département Informatique, Université de Paris</p>
+                        </div>
+
+                        <h2>Liens</h2>
+                        <div class="links-list">
+                            <a href="#" target="_blank">Google Scholar</a>
+                            <a href="#" target="_blank">ORCID</a>
+                            <a href="#" target="_blank">GitHub</a>
+                            <a href="#" target="_blank">LinkedIn</a>
+                            <a href="#" target="_blank">HAL</a>
+                        </div>
+                    </div>
+                </section>`
+    
+    
+    /*const data = await fetch("data/profile.json").then(r => r.json());
+    document.getElementById("profile").innerHTML = `
+    <h1>${data.name}</h1>
+    <img src="${data.photo}" class="photo">
+    <p>${data.bio}</p>
+    <p>${data.contact.email}</p>`; */
 }
 
 
