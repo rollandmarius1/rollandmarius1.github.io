@@ -1,7 +1,7 @@
 function loadMenu() {
     document.getElementById("menu").innerHTML = `
     <a href="index.html">🏠 Accueil</a>
-    <a href="cv.html">📄 CV<</a>
+    <a href="cv.html">📄 CV</a>
     <a href="teaching.html">👨‍🏫 Enseignements</a>
     <a href="publications.html">📚 Publications</a>`;
 }
@@ -74,13 +74,33 @@ function renderCVSection(title, items) {
 
 async function loadCV() {
     loadMenu();
-    
-    /*
     const container = document.getElementById("content");
     const data = await fetch("data/cv.json").then(r => r.json());
-    */
+
+    let html = '<h1>Curriculum Vitae</h1>';
     
-     document.getElementById("content").innerHTML = `<h1>Curriculum Vitae</h1>
+    for (const key in data) {
+        html += `<section class="cv-section"> 
+                    <h2>${key}</h2>`;
+        data[key].forEach(c => {
+        html += `
+            <div class="card-item cv-item">
+            <h3>${c.course}</h3>
+            <div class="teaching-meta">
+                    <span><strong>Niveau:</strong> ${c.level}3</span>
+                    <span><strong>Volume:</strong> ${c.hours}</span>
+                </div>
+                <div class="description">${c.description}</div>
+            </div>
+        `;
+        });
+    }
+  container.innerHTML = html;
+
+
+
+    
+    /*document.getElementById("content").innerHTML = `<h1>Curriculum Vitae</h1>
 
                 <section class="cv-section">
                     <h2>Formation</h2>
@@ -149,7 +169,7 @@ async function loadCV() {
                             <div class="level">Intermédiaire (B1)</div>
                         </div>
                     </div>
-                </section>`
+                </section>`*/
     /*`
     <h1>Curriculum Vitae</h1>
     ${renderCVSection("Formation", data.education)}
@@ -173,7 +193,7 @@ async function loadTeaching() {
     html += `<h2>${year}</h2>`;
     data[year].forEach(c => {
       html += `
-        <div class="teaching-item">
+        <div class="card-item teaching-item">
           <h3>${c.course}</h3>
           <div class="teaching-meta">
                 <span><strong>Niveau:</strong> ${c.level}3</span>
@@ -193,16 +213,16 @@ async function loadTeaching() {
 
 
 
-function renderPublications(title, list) {
-  let html = `<h2>${title}</h2>`;
+function renderPublications(title, key, list) {
+  let html = `<h2 class=${key}> ${title}</h2>`;
   list.forEach(p => {
     html += `
-        <div class="publication-item">
-            <div class="title">${p.title}</div>
+        <div class= "card-item ${key}-item">
+            <h3>${p.title}</h3>
             <div class="authors"> ${p.authors}</div>
             <div class="journal"> ${p.journal}</div>
             <div class="year">${p.year}</div>
-            <a href=${p.pdf} class="pdf-link">📄 PDF</a>
+            <a href=${p.pdf} class="pdf-link-${key}">📄 PDF</a>
         </div>
     `;
   });
@@ -215,10 +235,10 @@ async function loadPublications() {
   const data = await fetch("data/publications.json").then(r => r.json());
 
   container.innerHTML = `
-    <h1>Publications</h1>
-    ${renderPublications("Preprints", data.preprints)}
-    ${renderPublications("Revues", data.journals)}
-    ${renderPublications("Conférences", data.conferences)}
-  `;
+    <h1>Publications</h1>` +
+    renderPublications("Revues", "journal", data.journals) +
+    renderPublications("Conférences", "conf", data.conferences) +
+    renderPublications("Preprints", "preprint", data.preprints)
+  ;
 }
 

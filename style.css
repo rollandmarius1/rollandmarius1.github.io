@@ -1,3 +1,11 @@
+:root {
+  --color-journal: #078fea;
+  --color-conf: #ea01ff;
+  --color-preprint: #fc1c04;
+  --color-bg-card: #f8f9fa;
+}
+
+
 body {
   margin: 0;
   font-family: "Helvetica Neue", Arial, sans-serif;
@@ -15,18 +23,19 @@ body {
 #P {
   display: flex;
   justify-content: center;
-  padding: 40px 0;
+  padding: 20px 0;
 }
 
 /* Carte blanche */
 #P-inner {
   display: flex;
-  width: 66%;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
   min-height: 90vh;
   background: white;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-  border-radius: 8px;
-}
+  box-shadow: 0 100px 40px rgba(0,0,0,0.15);
+  border-radius: 0 0 8px 8px; /* arrondi seulement en bas */}
 
 
 .links-list {
@@ -52,27 +61,20 @@ body {
 
 
 
-/* MENU : dans P, taille auto */
 #menu {
-  position: sticky;      /* reste visible au scroll */
-  top: 40px;
-  align-self: flex-start;
-
-  padding: 20px 25px;
-  background: #f5f7fa;
+  position: static;   
+  display: flex;
+  padding: 20px 2px;
   border-right: 1px solid #ddd;
-
-  width: fit-content;
+  justify-content: space-evenly;  
 }
 
 /* Liens du menu */
 #menu a {
   display: block;
-  margin-bottom: 15px;
   color: #203a43;
   text-decoration: none;
   font-weight: 600;
-  white-space: nowrap;
 }
 
 #menu a:hover {
@@ -98,12 +100,35 @@ h1 {
   margin-bottom: 1.5rem;
   border-bottom: 3px solid #3498db;
   padding-bottom: 0.5rem;
+  margin-top: -1.5rem;
 }
 
-h2 {
+h2, h2.journal, h2.preprint, h2.conf  {
+  display: table;
   color: #34495e;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  border-bottom: 2px solid;
+  padding-bottom: 0.5rem;
+}
+
+h2{
+  border-bottom-color: #078fea;
+}
+
+h2.journal {
+  border-bottom-color: var(--color-journal);
+}
+
+h2.preprint {
+  border-bottom-color: var(--color-preprint);
+}
+
+h2.conf {
+  border-bottom-color: var(--color-conf);
+}
+
+h3{
+  color: #2c3e50;
+  margin-top: -0.5rem;  margin-bottom: 0.5rem;
 }
 
 .profile-header {
@@ -165,29 +190,35 @@ h2 {
   background-color: #2980b9;
 }
 
-.cv-item, .teaching-item, .publication-item {
+.card-item{
   margin-bottom: 1.5rem;
   padding: 1rem;
-  background-color: #f8f9fa;
+  background-color: var(--color-bg-card);
   border-radius: 5px;
+  border-left: 3px solid;
 }
 
 .cv-item {
-  border-left: 3px solid #3498db;
+  border-left-color: #3498db;
 }
 
 .teaching-item {
-  border-left: 3px solid #27ae60;
+  border-left-color: #27ae60;
 }
 
-.publication-item {
-  border-left: 3px solid #e74c3c;
+.preprint-item  {
+  border-left-color: var(--color-preprint);
 }
 
-.cv-item h3, .teaching-item h3, .publication-item .title {
-  color: #2c3e50;
-  margin-bottom: 0.5rem;
+.journal-item{
+  border-left-color:  var(--color-journal);
 }
+
+.conf-item{
+  border-left-color: var(--color-conf)
+}
+
+
 
 .period, .teaching-meta {
   color: #7f8c8d;
@@ -202,7 +233,7 @@ h2 {
 
 .teaching-meta {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
   flex-wrap: wrap;
 }
 
@@ -218,10 +249,7 @@ h2 {
   border-radius: 5px;
 }
 
-.skill-category h3 {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-}
+
 
 .skill-category ul {
   list-style: none;
@@ -245,16 +273,21 @@ h2 {
   min-width: 150px;
 }
 
-.pdf-link {
+.pdf-link-conf,
+.pdf-link-preprint,
+.pdf-link-journal {
   display: inline-block;
   margin-top: 0.5rem;
   padding: 0.3rem 0.8rem;
-  background-color: #e74c3c;
-  color: white;
+  color: black;
   text-decoration: none;
   border-radius: 3px;
   font-size: 0.9rem;
 }
+
+.pdf-link-conf     { background-color: var(--color-conf); }
+.pdf-link-preprint { background-color: var(--color-preprint); }
+.pdf-link-journal  { background-color: var(--color-journal); }
 
 .pdf-link:hover {
   background-color: #c0392b;
