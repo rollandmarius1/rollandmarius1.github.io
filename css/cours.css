@@ -1,3 +1,8 @@
+/* fond d'écran spécifique à la page enseignements */
+#Q {
+  background: linear-gradient(120deg, var(--color-teaching-bg-1), var(--color-teaching-bg-2), var(--color-teaching-bg-3));
+}
+
 /*centre le contenu*/
 #content {
   padding: 40px;
@@ -6,24 +11,27 @@
 
 /*titre*/
 h1 {
-  color: #2c3e50;
+  color: var(--color-title);
   margin-bottom: 1.5rem;
   border-bottom: 3px solid var(--color-teaching);
   padding-bottom: 0.5rem;
   margin-top: -1.5rem;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* sous-titre */
 h2 {
   display: table;
-  color: #34495e;
+  color: var(--color-subtitle);
   border-bottom: 2px solid var(--color-teaching);
   padding-bottom: 0.5rem;
 }
 
 /*titre dans carte*/
 h3 {
-  color: #2c3e50;
+  color: var(--color-title);
   margin-top: -0.5rem;
   margin-bottom: 0.1rem;
 }
@@ -34,27 +42,185 @@ h3 {
   padding: 1rem;
   background-color: var(--color-bg-card);
   border-radius: 5px;
-  border-left: 5px solid var(--color-teaching);
-  transition: all 0.15s ease;
+  border-left: 5px solid;
+  border-right: 5px solid transparent;
+  transition: all 0.45s ease;
   cursor: pointer;
+}
+
+/* couleurs par type */
+.theo-item {
+  border-left-color: var(--color-teaching-theo);
+}
+
+.prat-item {
+  border-left-color: var(--color-teaching-prat);
 }
 
 /* hover : changement de couleur et bordure */
 .card-item:hover {
   background-color: var(--color-bg-card-hover);
-  border-left: none;
-  border-right: 5px solid var(--color-teaching);
 }
 
-.teaching-meta,
+.theo-item:hover {
+  border-right-color: var(--color-teaching-theo);
+}
+
+.prat-item:hover {
+  border-right-color: var(--color-teaching-prat);
+}
+
+/* sous-titres colorés par type */
+h2.theo {
+  border-bottom-color: var(--color-teaching-theo);
+}
+
+h2.prat {
+  border-bottom-color: var(--color-teaching-prat);
+}
+
+.teaching-meta {
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
 .card-item .description {
-  color: #7f8c8d;
+  color: var(--color-text-tertiary);
   font-size: 0.85rem;
   margin-bottom: 0.3rem;
 }
 
-.teaching-meta {
+.card-item:hover .teaching-meta {
+  color: var(--color-text-secondary-hover);
+}
+
+.card-item:hover .description {
+  color: var(--color-text-tertiary-hover);
+}
+
+/* volets (pseudo-éléments) pour l'animation au clic */
+.card-item {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.card-item::before,
+.card-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 0%;
+  transition: width 0.3s ease;
+  z-index: 1;
+}
+
+.card-item::before { left: 0; }
+.card-item::after  { right: 0; }
+
+.card-item.theo-item::before,
+.card-item.theo-item::after {
+  background-color: var(--color-teaching-theo);
+}
+
+.card-item.prat-item::before,
+.card-item.prat-item::after {
+  background-color: var(--color-teaching-prat);
+}
+
+.card-item.active::before,
+.card-item.active::after {
+  width: 50%;
+}
+
+/* closing : garde le style hover pendant le retour */
+.card-item.closing {
+  background-color: var(--color-bg-card-hover);
+}
+
+.theo-item.closing {
+  border-right-color: var(--color-teaching-theo);
+}
+
+.prat-item.closing {
+  border-right-color: var(--color-teaching-prat);
+}
+
+/* couleurs popup selon le type */
+#modal.modal-theo {
+  border: 2px solid var(--color-teaching-theo);
+  border-left: 8px solid var(--color-teaching-theo);
+  --modal-color: var(--color-teaching-theo);
+}
+
+#modal.modal-prat {
+  border: 2px solid var(--color-teaching-prat);
+  border-left: 8px solid var(--color-teaching-prat);
+  --modal-color: var(--color-teaching-prat);
+}
+
+/* groupe bouton + sous-menu */
+.material-btn-group {
+  position: relative;
+  display: inline-block;
+}
+
+.btn-material {
+  padding: 0.5rem 1.5rem;
+  border: 2px solid var(--modal-color);
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  background-color: transparent;
+  color: black;
+  transition: all 0.2s ease;
+}
+
+#modal-buttons .btn-material:hover,
+#modal-buttons .btn-material.active,
+#modal-buttons .material-btn-group.open .btn-material {
+  background-color: var(--modal-color);
+  color: white;
+}
+
+/* sous-menu déroulant vers le bas */
+.material-submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--color-bg-card);
+  border: 2px solid var(--modal-color);
+  border-radius: 5px;
+  margin-top: 5px;
+  min-width: 100%;
+  z-index: 10;
+}
+
+.material-btn-group.open .material-submenu {
   display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.material-submenu a {
+  padding: 0.4rem 1rem;
+  color: black;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: all 0.15s ease;
+  border-bottom: 1px solid var(--modal-color);
+}
+
+.material-submenu a:last-child {
+  border-bottom: none;
+}
+
+.material-submenu a:hover {
+  background-color: var(--modal-color);
+  color: white;
 }

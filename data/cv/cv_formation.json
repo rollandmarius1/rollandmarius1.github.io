@@ -1,0 +1,20 @@
+[
+  {
+    "period": "2023-2026",
+    "title": "Doctorat en informatique",
+    "institution": "Aix-Marseille Université",
+    "description": "Sujet : « Des unrolls aux systèmes dynamiques : algorithmes de résolution et énumération des (in)équations polynomiales ». Sous contrat CNRS, attaché à l'équipe CANA du LIS. Directeurs : Kévin Perrot, Antonio E. Porreca."
+  },
+  {
+    "period": "2021-2023",
+    "title": "Master d'informatique - Parcours IMD",
+    "institution": "Aix-Marseille Université",
+    "description": "Parcours Informatique et Mathématiques Discrètes, site Luminy."
+  },
+  {
+    "period": "2019-2021",
+    "title": "Licence d'informatique (L2-L3)",
+    "institution": "Aix-Marseille Université",
+    "description": "Site Luminy."
+  }
+]

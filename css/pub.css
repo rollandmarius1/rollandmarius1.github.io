@@ -7,17 +7,20 @@
 
 /*titre*/
 h1 {
-  color: #2c3e50;
+  color: var(--color-title);
   margin-bottom: 1.5rem;
-  border-bottom: 3px solid #3498db;
+  border-bottom: 3px solid var(--color-journal);
   padding-bottom: 0.5rem;
   margin-top: -1.5rem;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* sous-titre */
 h2, h2.journal, h2.preprint, h2.conf  {
   display: table;
-  color: #34495e;
+  color: var(--color-subtitle);
   border-bottom: 2px solid;
   padding-bottom: 0.5rem;
 }
@@ -50,15 +53,23 @@ h2.phd {
 
 /*titre dans carte*/
 h3{
-  color: #2c3e50;
+  color: var(--color-title);
   margin-top: -0.5rem;  margin-bottom: 0.1rem;
 }
 
 /* contenu des cartes (hors titre) */
 .card-item .authors,
-.card-item .journal,
+.card-item .venue,
 .card-item .year {
   font-size: 0.85rem;
+}
+
+.card-item .venue {
+  color: var(--color-text-secondary);
+}
+
+.card-item .year {
+  color: var(--color-text-tertiary);
 }
 
 
@@ -105,6 +116,14 @@ h3{
 .card-item.closing {
   background-color: var(--color-bg-card-hover);
   border-right: 5px solid;
+}
+
+.card-item:hover .venue {
+  color: var(--color-text-secondary-hover);
+}
+
+.card-item:hover .year {
+  color: var(--color-text-tertiary-hover);
 }
 
 .preprint-item:hover, .preprint-item.closing {

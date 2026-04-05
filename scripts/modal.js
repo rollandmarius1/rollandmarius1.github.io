@@ -19,8 +19,12 @@ function activateCards(container, data) {
       const index = card.dataset.index;
       const elapsed = Date.now() - downTime;
       const remaining = Math.max(0, 300 - elapsed);
+      /* Stocke la position de la carte pour l'animation */
+      const rect = card.getBoundingClientRect();
+      const originX = rect.left + rect.width / 2;
+      const originY = rect.top + rect.height / 2;
       setTimeout(() => {
-        openModal(data[type], type, index);
+        openModal(data[type], type, index, originX, originY);
       }, remaining);
     });
   });
@@ -35,6 +39,7 @@ function createModal() {
       <div id="modal-overlay"></div>     <!-- Q' : fond semi-transparent + flou -->
       <div id="modal">                  <!-- P' : la fenêtre popup -->
         <button id="modal-close">X</button>
+        <h3 id="modal-title">Résumé</h3>
         <div id="modal-body">              <!-- zone scrollable -->
           <table id="modal-content"></table>  <!-- tableau rempli dynamiquement -->
           <div id="modal-buttons">
@@ -135,7 +140,7 @@ function openBibtexModal(item, type) {
    - data : le tableau de publications du bon type (ex: data.journals)
    - type : "journal", "conf" ou "preprint"
    - index : la position de la publication dans le tableau */
-function openModal(data, type, index) {
+function openModal(data, type, index, originX, originY) {
   const item = data[index];
   const modal = document.getElementById('modal');
   const content = document.getElementById('modal-content');
@@ -179,6 +184,19 @@ function openModal(data, type, index) {
     btnPdf.onclick = () => window.open(item.pdf, '_blank');
   } else {
     btnPdf.style.display = 'none';
+  }
+
+  /* Définit le point de départ de l'animation depuis la carte cliquée.
+     transform-origin est relatif au modal, donc on convertit les coordonnées
+     de la carte (viewport) en position relative au modal (centré à 50% 50%) */
+  if (originX !== undefined && originY !== undefined) {
+    const modalW = Math.min(window.innerWidth * 0.85, 700);
+    const modalH = window.innerHeight * 0.85;
+    const modalLeft = (window.innerWidth - modalW) / 2;
+    const modalTop = (window.innerHeight - modalH) / 2;
+    const relX = originX - modalLeft;
+    const relY = originY - modalTop;
+    modal.style.transformOrigin = `${relX}px ${relY}px`;
   }
 
   /* Affiche la popup en ajoutant la classe active sur le conteneur */

@@ -1,0 +1,20 @@
+[
+  {
+    "period": "2025",
+    "title": "Séminaire à Durham",
+    "institution": "Université de Durham",
+    "description": "Le 20 mai. Présentation générale sur la résolution des équations polynomiales sur les systèmes dynamiques."
+  },
+  {
+    "period": "2025",
+    "title": "Séminaire à CRIStAL",
+    "institution": "Université de Lille",
+    "description": "Le 13 juin. Résolution d'équations polynomiales de systèmes dynamiques avec un polynôme injectif."
+  },
+  {
+    "period": "2024",
+    "title": "Séminaire à I3S",
+    "institution": "Université Côte d'Azur",
+    "description": "Le 14 novembre. Résolution d'équations polynomiales de systèmes dynamiques avec un polynôme injectif."
+  }
+]

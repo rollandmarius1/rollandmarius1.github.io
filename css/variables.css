@@ -7,8 +7,40 @@
   --color-phd: #003366;
   --color-bg-card: #f7f7f7;
   --color-bg-card-hover: #c0c0c0;
-  --color-cv: #800080;
-  --color-teaching: #2E7D6E;
+  --color-text-secondary: #6B7B8D;
+  --color-text-tertiary: #8B9BAD;
+  --color-text-secondary-hover: #3D4D5F;
+  --color-text-tertiary-hover: #4D5D6F;
+  --color-cv: #2E7D4F;
+  --color-teaching: #c40e52;
+  --color-teaching-theo: #800080;
+  --color-teaching-prat: #9B111E;
+  --color-title: #2c3e50;
+  --color-subtitle: #34495e;
+  --color-menu: #203a43;
+  --color-meta: #7f8c8d;
+  --color-meta-light: #95a5a6;
+  --color-placeholder: #e0e0e0;
+  /* Thème 1 — Parcours académique (vert-bleu canard) */
+  --color-cv-formation: #3D9488;
+  --color-cv-stages: #30807A;
+  /* Thème 2 — Recherche (dark pastel green / émeraude) */
+  --color-cv-projets: #66BB6A;
+  --color-cv-sejours: #388E3C;
+  --color-cv-seminaires: #267530;
+  /* Thème 3 — Engagement (vert olive) */
+  --color-cv-responsabilites: #6B7A2E;
+  --color-cv-mediation: #566425;
+  --color-cv-bg-1: #05100A;
+  --color-cv-bg-2: #0A1E10;
+  --color-cv-bg-3: #0F2A16;
+  --color-teaching-bg-1: #301520;
+  --color-teaching-bg-2: #40202C;
+  --color-teaching-bg-3: #381A26;
+  --color-index: #808080;
+  --color-index-bg-1: #1A1A1A;
+  --color-index-bg-2: #252525;
+  --color-index-bg-3: #303030;
   --color-overlay: 21, 58, 66;
   --color-bg-grad-1: #0A2428;
   --color-bg-grad-2: #153A42;

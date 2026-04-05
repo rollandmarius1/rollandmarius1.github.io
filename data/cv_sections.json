@@ -1,0 +1,15 @@
+[
+  { "theme": "Parcours académique", "sections": [
+    { "id": "formation",   "title": "Formation",   "file": "cv/cv_formation.json" },
+    { "id": "stages",      "title": "Stages",      "file": "cv/cv_stages.json" }
+  ]},
+  { "theme": "Recherche", "sections": [
+    { "id": "projets",     "title": "Projets de recherche",               "file": "cv/cv_projets.json" },
+    { "id": "sejours",     "title": "Séjours de recherche / Conférences", "file": "cv/cv_sejours.json" },
+    { "id": "seminaires",  "title": "Séminaires",                         "file": "cv/cv_seminaires.json" }
+  ]},
+  { "theme": "Engagement", "sections": [
+    { "id": "responsabilites", "title": "Responsabilités",     "file": "cv/cv_responsabilites.json" },
+    { "id": "mediation",      "title": "Activités de médiation", "file": "cv/cv_mediation.json" }
+  ]}
+]

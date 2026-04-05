@@ -1,12 +1,107 @@
 {
-	"2024": [
-		{
-			"year" : "2024-",
-			"course": "Algorithmique Avancée",
-			"level": "M1",
-			"hours": "24h CM + 24h TD",
-			"description": "Graphes, complexité, programmation dynamique."
-		}
-	]
+  "2025-2026": [
+    {
+      "course": "Architecture des ordinateurs",
+      "type": "prat",
+      "level": "L2",
+      "hours": "9h TD + 12h TP",
+      "description": "Architecture matérielle, circuits logiques, assembleur.",
+      "details": "Ce cours présente les fonctionnements et la conception des circuits de base d'un ordinateur. Fonctionnement d'un ordinateur : circuits combinatoires, séquentiels, mémoire, flux de données et instructions. Machine de Mealy : passage d'un programme à une machine. Assembleur : jeux d'instruction, registres, principe de codage. Compétences visées : identifier et caractériser les principaux éléments fonctionnels et l'architecture matérielle d'un ordinateur, écrire des routines simples en langage machine.",
+      "cm": 0,
+      "td": 0,
+      "tp": 0
+    },
+    {
+      "course": "Initiation au génie logiciel",
+      "type": "prat",
+      "level": "L3",
+      "hours": "15h TP",
+      "description": "Bonnes pratiques de développement, tests, gestion de projet.",
+      "details": "La conception consiste à donner à un projet de programmation une organisation souple, mais structurante. La modularité intelligente est une clé de voûte de la conception. Contenu : principes SOLID (SRP, OCP, LSP, ISP, DIP), patrons de conceptions (Factory, Strategy, Template method, Decorator, Composite, State, Adapter, Builder, Command, Chain of responsibility, Iterator, Observer, Proxy, Bridge, Visitor, Singleton), diagrammes de classes UML, tests unitaires, refactoring, documentation et spécification.",
+      "cm": 0,
+      "td": 0,
+      "tp": 0
+    },
+    {
+      "course": "Complexité",
+      "type": "theo",
+      "level": "M1",
+      "hours": "9h TD + 9h TP",
+      "description": "Classes de complexité, réductions, NP-complétude.",
+      "details": "La complexité algorithmique est un pilier de la science informatique. Dans ce cours nous abordons les premiers éléments de cette théorie, pour tendre vers la question : est-ce que P=NP ? En pratique nous apprenons à utiliser un solveur pour la résolution de problèmes difficiles. Contenu : rappels d'analyse de complexité, complexité dans le pire cas, notion de problèmes (décision, recherche, dénombrement, énumération, optimisation), classes de complexité P, NP, coNP, PSPACE, EXP, distinctions connues (théorèmes de hiérarchie) et conjectures, exemples de problèmes, utilisation d'un solver (modélisation SAT, CSP). Responsable : Kévin Perrot.",
+      "cm": 0,
+      "td": 0,
+      "tp": 0
+    },
+    {
+      "course": "Stage Hippocampe",
+      "type": "prat",
+      "level": "Vulgarisation",
+      "hours": "12h TD",
+      "description": "Activité de vulgarisation scientifique.",
+      "details": "",
+      "cm": 0,
+      "td": 0,
+      "tp": 0
+    }
+  ],
+  "2024-2025": [
+    {
+      "course": "Programmation et conception (en Java)",
+      "type": "prat",
+      "level": "L3",
+      "hours": "24h TP",
+      "description": "Conception orientée objet, design patterns, programmation en Java.",
+      "details": "La conception consiste à donner à un projet de programmation une organisation souple, mais structurante. La modularité intelligente est une clé de voûte de la conception. Contenu : principes SOLID (SRP, OCP, LSP, ISP, DIP), patrons de conceptions (Factory, Strategy, Template method, Decorator, Composite, State, Adapter, Builder, Command, Chain of responsibility, Iterator, Observer, Proxy, Bridge, Visitor, Singleton), diagrammes de classes UML, tests unitaires, refactoring, documentation et spécification.",
+      "cm": 0,
+      "td": 0,
+      "tp": 0
+    },
+    {
+      "course": "Algorithmique 2",
+      "type": "theo",
+      "level": "L3",
+      "hours": "24h TD + 18h TP",
+      "description": "Algorithmes avancés, structures de données, complexité.",
+      "details": "Graphes : parcours en largeur et en profondeur, tri topologique, composantes fortement connexes, flots maximums, flot de coût minimum, circulations avec demandes. Programmation dynamique : PLSC, Warshall-Floyd, structure secondaire d'un ARN, arbres binaires de recherche optimaux. Diviser pour régner : Master Théorème, multiplication d'entiers, élément k-minimal, paire de points les plus proches. Algorithmes d'approximation : ordonnancement de tâches, bin packing, voyageur de commerce. Algorithmes randomisés : problème de l'embauche, tri rapide, coupe min d'un graphe. Balayage : intersection de segments, triangulation d'un polygone simple.",
+      "cm": 0,
+      "td": 0,
+      "tp": 0
+    }
+  ],
+  "2023-2024": [
+    {
+      "course": "Programmation 1 (Java)",
+      "type": "prat",
+      "level": "L1",
+      "hours": "18h TD + 24h TP",
+      "description": "Introduction à la programmation en Java.",
+      "details": "Cet enseignement porte sur les principes fondamentaux de la programmation, basé sur le langage Java. Contenu : introduction au langage Java et structures de contrôle de base (variables, types primitifs, String, main, saisies, fonctions, conditionnelles, boucles, tableaux, boucle for-each, récursivité), introduction à la programmation objets (définition d'objets, instanciations, méthodes, attributs, attributs et méthodes statiques, méthodes factory, boxing), interfaces et polymorphisme, collections.",
+      "cm": 0,
+      "td": 0,
+      "tp": 0
+    },
+    {
+      "course": "Introduction à l'Informatique",
+      "type": "theo",
+      "level": "L1",
+      "hours": "15h TD",
+      "description": "Fondamentaux de l'informatique.",
+      "details": "",
+      "cm": 0,
+      "td": 0,
+      "tp": 0
+    },
+    {
+      "course": "Algorithmique et recherche opérationnelle",
+      "type": "theo",
+      "level": "M1",
+      "hours": "9h TP",
+      "description": "Algorithmes d'optimisation, programmation linéaire.",
+      "details": "",
+      "cm": 0,
+      "td": 0,
+      "tp": 0
+    }
+  ]
 }
-

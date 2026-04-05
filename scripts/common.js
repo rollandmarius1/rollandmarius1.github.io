@@ -12,6 +12,6 @@ function loadMenu(activePage) {
       { href: "publications.html", icon: "📚", label: "Publications",   page: "publications" }
     ];
     document.getElementById("menu").innerHTML = links.map(l =>
-      `<a href="${htmlPath}${l.href}" class="${l.page === activePage ? 'active' : ''}"><span class="menu-icon">${l.icon}</span><br>${l.label}</a>`
+      `<a href="${htmlPath}${l.href}" class="${l.page === activePage ? 'active' : ''}" data-page="${l.page}"><span class="menu-icon">${l.icon}</span><br>${l.label}</a>`
     ).join('');
 }

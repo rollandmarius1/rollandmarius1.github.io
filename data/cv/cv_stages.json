@@ -1,0 +1,20 @@
+[
+  {
+    "period": "2023",
+    "title": "Décomposition algébrique de systèmes dynamiques finis déterministes",
+    "institution": "Laboratoire LIS",
+    "description": "Du 6 mars au 28 juillet. Superviseurs : Kévin Perrot, Antonio E. Porreca."
+  },
+  {
+    "period": "2022",
+    "title": "Complexité de la prédiction des piles de sables en deux dimensions",
+    "institution": "Laboratoire LIS",
+    "description": "Du 20 juin au 19 août. Superviseur : Kévin Perrot."
+  },
+  {
+    "period": "2022",
+    "title": "Compression de bulles dans les polygones simples sans trou",
+    "institution": "Laboratoire LIS",
+    "description": "Du 25 avril au 17 juin. Superviseur : Victor Chepoi."
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "period": "2026",
+    "title": "Collaboration scientifique à Santiago du Chili",
+    "institution": "Universidad Adolfo Ibáñez",
+    "description": "Du 13 mars au 12 avril. Collaboration avec Marco Montalva-Medel, Eric Goles et Julio Aracena sur les modes de mise à jour des réseaux d'automates."
+  },
+  {
+    "period": "2026",
+    "title": "Conférence LATIN 2026",
+    "institution": "Brésil",
+    "description": "Présentation d'un article."
+  },
+  {
+    "period": "2025",
+    "title": "Collaboration à l'Université de Durham",
+    "institution": "Université de Durham",
+    "description": "Du 19 au 23 mai. Collaboration avec Maximilien Gadouleau et Sara Riva sur la question des systèmes partiels."
+  },
+  {
+    "period": "2025",
+    "title": "Conférence AUTOMATA 2025",
+    "institution": "Lille",
+    "description": "Du 30 juin au 4 juillet. Présentation d'un article."
+  },
+  {
+    "period": "2025",
+    "title": "Conférence CiE 2025",
+    "institution": "Lisbonne",
+    "description": "Du 14 au 18 juillet. Présentation d'un article."
+  },
+  {
+    "period": "2025",
+    "title": "Collaboration à l'Université de Trieste",
+    "institution": "Université de Trieste",
+    "description": "Du 19 juillet au 17 août. Collaboration avec Luca Manzoni sur le Firing Squad Synchronization Problem et les réseaux d'automates."
+  },
+  {
+    "period": "2025",
+    "title": "Collaboration sur les problèmes d'énumération",
+    "institution": "",
+    "description": "Du 17 au 28 novembre. Collaboration avec Sara Riva et Marie-Emilie Voge sur l'énumération de solutions aux équations polynomiales de systèmes dynamiques et la question des systèmes partiels."
+  },
+  {
+    "period": "2024",
+    "title": "Collaboration à l'Université Presbiteriana Mackenzie",
+    "institution": "São Paulo, Brésil",
+    "description": "Du 10 août au 7 septembre. Collaboration avec Pedro Paolo Balbi et Eurico Ruivo sur les réseaux d'automates résolvant la tâche de classification de densité."
+  }
+]

@@ -1,36 +1,34 @@
 async function loadProfile() {
-    loadMenu("index");
-    document.getElementById("profile").innerHTML = `
-     <section class="profile-section">
-                    <div class="profile-header">
-                        <div class="profile-photo"></div>
-                        <div class="profile-info">
-                            <h1>Dr. Prénom Nom</h1>
-                            <p class="profile-title">Doctorant</p>
-                            <p class="profile-affiliation">CNRS, LIS, Marseille</p>
-                        </div>
-                    </div>
+  loadMenu("index");
+  const data = await fetch(dataPath + "profile.json").then(r => r.json());
 
-                    <div class="profile-content">
-                        <h2>À propos</h2>
-                        <p>Je suis chercheur en informatique .</p>
+  /* Génère les liens (n'affiche que ceux qui ont une URL) */
+  const links = data.links
+    .filter(l => l.url)
+    .map(l => `<a href="${l.url}" target="_blank">${l.label}</a>`)
+    .join('');
 
-                        <h2>Coordonnées</h2>
-                        <div class="contact-info">
-                            <p><strong>📧 Email:</strong> prenom.nom@univ-paris.fr</p>
-                            <p><strong>📞 Téléphone:</strong> +33 1 23 45 67 89</p>
-                            <p><strong>🏢 Bureau:</strong> Bâtiment A, Bureau 305</p>
-                            <p><strong>📍 Adresse:</strong> Département Informatique, Aix-Marseille Université</p>
-                        </div>
+  document.getElementById("profile").innerHTML = `
+    <section class="profile-section">
+      <div class="profile-header">
+        <img class="profile-photo" src="${data.photo}" alt="Photo de ${data.name}">
+        <div class="profile-info">
+          <h1>${data.name}</h1>
+          <p class="profile-title">${data.title}</p>
+          <p class="profile-affiliation">${data.affiliation}</p>
+        </div>
+      </div>
 
-                        <h2>Liens</h2>
-                        <div class="links-list">
-                            <a href="#" target="_blank">Google Scholar</a>
-                            <a href="#" target="_blank">ORCID</a>
-                            <a href="#" target="_blank">GitHub</a>
-                            <a href="#" target="_blank">LinkedIn</a>
-                            <a href="#" target="_blank">HAL</a>
-                        </div>
-                    </div>
-                </section>`
+      <div class="profile-content">
+        <h2>À propos</h2>
+        <p>${data.bio}</p>
+
+        <h2>Contact</h2>
+        <div class="contact-info">
+          <p><span class="copy-email" title="Copier l'adresse email" style="cursor:pointer" onclick="navigator.clipboard.writeText('${data.email}')">📧</span> <strong>Email :</strong> <a href="mailto:${data.email}">${data.email}</a></p>
+        </div>
+
+        ${links ? `<h2>Liens</h2><div class="links-list">${links}</div>` : ''}
+      </div>
+    </section>`;
 }

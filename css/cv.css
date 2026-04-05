@@ -1,29 +1,56 @@
+/* fond d'écran spécifique à la page CV */
+#Q {
+  background: linear-gradient(120deg, var(--color-cv-bg-1), var(--color-cv-bg-2), var(--color-cv-bg-3));
+}
+
 /*centre le contenu*/
 #content {
   padding: 40px;
   flex: 1;
 }
 
-/*titre*/
+/*titre principal*/
 h1 {
-  color: #2c3e50;
+  color: var(--color-title);
   margin-bottom: 1.5rem;
   border-bottom: 3px solid var(--color-cv);
   padding-bottom: 0.5rem;
   margin-top: -1.5rem;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* sous-titre */
+/* h2 = titre de thème (Parcours académique, Recherche, Engagement) */
 h2 {
   display: table;
-  color: #34495e;
+  color: var(--color-subtitle);
   border-bottom: 2px solid var(--color-cv);
   padding-bottom: 0.5rem;
+  margin-top: 2rem;
 }
 
-/*titre dans carte*/
+/* h3 = titre de section (Formation, Stages, etc.) */
 h3 {
-  color: #2c3e50;
+  display: table;
+  color: var(--color-subtitle);
+  border-bottom: 2px solid;
+  padding-bottom: 0.3rem;
+  font-size: 1.1rem;
+}
+
+/* couleur des sous-titres h3 par section */
+h3.formation       { border-bottom-color: var(--color-cv-formation); }
+h3.projets          { border-bottom-color: var(--color-cv-projets); }
+h3.sejours          { border-bottom-color: var(--color-cv-sejours); }
+h3.seminaires       { border-bottom-color: var(--color-cv-seminaires); }
+h3.responsabilites  { border-bottom-color: var(--color-cv-responsabilites); }
+h3.stages           { border-bottom-color: var(--color-cv-stages); }
+h3.mediation        { border-bottom-color: var(--color-cv-mediation); }
+
+/*titre dans carte*/
+h4 {
+  color: var(--color-title);
   margin-top: -0.5rem;
   margin-bottom: 0.1rem;
 }
@@ -34,66 +61,78 @@ h3 {
   padding: 1rem;
   background-color: var(--color-bg-card);
   border-radius: 5px;
-  border-left: 5px solid var(--color-cv);
-  transition: all 0.15s ease;
+  border-left: 5px solid;
+  transition: all 0.3s ease;
   cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-/* hover : changement de couleur et bordure */
+/* couleur des bordures par section */
+.formation-item       { border-left-color: var(--color-cv-formation); }
+.projets-item          { border-left-color: var(--color-cv-projets); }
+.sejours-item          { border-left-color: var(--color-cv-sejours); }
+.seminaires-item       { border-left-color: var(--color-cv-seminaires); }
+.responsabilites-item  { border-left-color: var(--color-cv-responsabilites); }
+.stages-item           { border-left-color: var(--color-cv-stages); }
+.mediation-item        { border-left-color: var(--color-cv-mediation); }
+
+/* hover : effet de relief */
 .card-item:hover {
-  background-color: var(--color-bg-card-hover);
-  border-left: none;
-  border-right: 5px solid var(--color-cv);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
-.card-item .description,
-.period, .teaching-meta {
-  color: #7f8c8d;
+/* carte agrandie au clic */
+.card-item.expanded {
+  position: relative;
+  z-index: 200;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  cursor: default;
+}
+
+/* overlay derrière la carte agrandie */
+#cv-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(var(--color-overlay), 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 150;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+#cv-overlay.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* textes secondaires */
+.period {
+  color: var(--color-text-secondary);
   font-size: 0.85rem;
   margin-bottom: 0.3rem;
 }
 
 .institution {
-  color: #34495e;
+  color: var(--color-subtitle);
   font-style: italic;
+  font-size: 0.85rem;
 }
 
-.teaching-meta {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+.card-item .description {
+  color: var(--color-text-tertiary);
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
 }
 
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
+.card-item:hover .period {
+  color: var(--color-text-secondary-hover);
 }
 
-.skill-category {
-  padding: 1rem;
-  background-color: var(--color-bg-card);
-  border-radius: 5px;
-}
-
-.skill-category ul {
-  list-style: none;
-}
-
-.skill-category li::before {
-  content: "▪ ";
-  color: var(--color-cv);
-}
-
-.languages-list {
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.language-item {
-  padding: 1rem;
-  background-color: var(--color-bg-card);
-  border-radius: 5px;
-  min-width: 150px;
+.card-item:hover .description {
+  color: var(--color-text-tertiary-hover);
 }

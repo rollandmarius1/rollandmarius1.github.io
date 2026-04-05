@@ -1,10 +1,14 @@
 {
-"name": "Nom Prénom",
-"photo": "photo.jpg",
-"bio": "Chercheur en informatique spécialisé en ...",
-"contact": {
-"email": "prenom.nom@universite.fr",
-"github": "https://github.com/username",
-"orcid": "https://orcid.org/0000-0000"
-}
+  "name": "Marius Rolland",
+  "title": "Doctorant en Informatique",
+  "affiliation": "Équipe CANA, LIS, Aix-Marseille Université",
+  "bio": "Je suis doctorant en informatique au sein de l'équipe CANA du Laboratoire d'Informatique et Systèmes (LIS) à Aix-Marseille Université, sous la direction de Kévin Perrot et Antonio E. Porreca. Mes recherches portent sur l'algèbre et l'algorithmique des systèmes dynamiques discrets finis, et plus particulièrement sur la résolution et l'énumération des (in)équations polynomiales dans le semi-anneau de ces systèmes.",
+  "email": "marius.rolland@lis-lab.fr",
+  "photo": "../img/photo.jpg",
+  "links": [
+    { "label": "Google Scholar", "url": "https://scholar.google.com/citations?user=_VR5smYAAAAJ" },
+    { "label": "ORCID", "url": "https://orcid.org/0009-0006-9073-9803" },
+    { "label": "arXiv", "url": "http://arxiv.org/a/rolland_m_1" },
+    { "label": "HAL", "url": "https://cv.hal.science/macrd" }
+  ]
 }

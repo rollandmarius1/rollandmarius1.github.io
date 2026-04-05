@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: "Helvetica Neue", Arial, sans-serif;
+  user-select: none;
 }
 
 /* Q = arrière-plan */
@@ -28,4 +29,5 @@ body {
   min-height: 90vh;
   background: white;
   box-shadow: 0 100px 40px rgba(0,0,0,0.15);
-  border-radius: 0 0 8px 8px; /* arrondi seulement en bas */}
+  border-radius: 12px;
+}

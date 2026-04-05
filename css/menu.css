@@ -4,18 +4,18 @@
   flex-wrap: wrap;
   padding: 0;
   margin-bottom: 20px;
-  border-bottom: 1px solid #203a43;
+  border-bottom: 1px solid var(--color-menu);
 }
 
 /* Liens du menu : style onglets, répartis uniformément */
 #menu a {
   flex: 1;
-  color: #203a43;
+  color: var(--color-menu);
   text-decoration: none;
   font-weight: 600;
   padding: 1rem 0.5rem;
   text-align: center;
-  border-right: 1px solid #203a43;
+  border-right: 1px solid var(--color-menu);
   transition: all 0.15s ease;
   min-width: 0;
   word-wrap: break-word;
@@ -26,10 +26,23 @@
   border-right: none;
 }
 
-#menu a:hover {
-  color: var(--color-journal);
+/* couleur par page au hover et actif */
+#menu a[data-page="index"]:hover,
+#menu a[data-page="index"].active {
+  color: var(--color-index);
 }
 
-#menu a.active {
+#menu a[data-page="cv"]:hover,
+#menu a[data-page="cv"].active {
+  color: var(--color-cv);
+}
+
+#menu a[data-page="teaching"]:hover,
+#menu a[data-page="teaching"].active {
+  color: var(--color-teaching);
+}
+
+#menu a[data-page="publications"]:hover,
+#menu a[data-page="publications"].active {
   color: var(--color-journal);
 }
