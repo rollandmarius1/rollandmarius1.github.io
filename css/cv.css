@@ -1,0 +1,99 @@
+/*centre le contenu*/
+#content {
+  padding: 40px;
+  flex: 1;
+}
+
+/*titre*/
+h1 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid var(--color-cv);
+  padding-bottom: 0.5rem;
+  margin-top: -1.5rem;
+}
+
+/* sous-titre */
+h2 {
+  display: table;
+  color: #34495e;
+  border-bottom: 2px solid var(--color-cv);
+  padding-bottom: 0.5rem;
+}
+
+/*titre dans carte*/
+h3 {
+  color: #2c3e50;
+  margin-top: -0.5rem;
+  margin-bottom: 0.1rem;
+}
+
+/* definition des cartes */
+.card-item {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: var(--color-bg-card);
+  border-radius: 5px;
+  border-left: 5px solid var(--color-cv);
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+/* hover : changement de couleur et bordure */
+.card-item:hover {
+  background-color: var(--color-bg-card-hover);
+  border-left: none;
+  border-right: 5px solid var(--color-cv);
+}
+
+.card-item .description,
+.period, .teaching-meta {
+  color: #7f8c8d;
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+}
+
+.institution {
+  color: #34495e;
+  font-style: italic;
+}
+
+.teaching-meta {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.skill-category {
+  padding: 1rem;
+  background-color: var(--color-bg-card);
+  border-radius: 5px;
+}
+
+.skill-category ul {
+  list-style: none;
+}
+
+.skill-category li::before {
+  content: "▪ ";
+  color: var(--color-cv);
+}
+
+.languages-list {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.language-item {
+  padding: 1rem;
+  background-color: var(--color-bg-card);
+  border-radius: 5px;
+  min-width: 150px;
+}

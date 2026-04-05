@@ -1,30 +1,78 @@
 {
+  "books": [],
+  "journals": [
+    {
+      "title": "Infinite trees for division and roots over finite discrete-time dynamical systems",
+      "authors": "François Doré and Kevin Perrot and Antonio E. Porreca and Sara Riva and Marius Rolland",
+      "journal": "Natural Computing",
+      "year": 2026,
+      "volume": "",
+      "pages": "",
+      "publisher": "Springer",
+      "doi": "10.1007/s11047-026-10068-7",
+      "abstract": "Finite discrete-time dynamical systems (FDDS) model phenomena that evolve deterministically in discrete time. It is possible to define sum and product operations on these systems (disjoint union and direct product, respectively), giving a commutative semiring. This algebraic structure led to several works employing polynomial equations to model hypotheses on phenomena modelled using FDDS. To solve these equations, algorithms for performing division and computing $k$-th roots are needed. In this paper, we propose two polynomial algorithms for these tasks, under the condition that the result is a connected FDDS. These algorithms exploit the notion of unroll of a FDDS, an alternative representation based on a forest of infinite trees constructed by computing the transition function of the system backwards. This ultimately leads to an efficient solution to equations of the type $AX^k=B$ for connected $X$ and some generalisations. These results are some of the important final steps for solving more general polynomial equations on FDDS.",
+      "pdf": "https://arxiv.org/pdf/2405.09236v2"
+    }
+  ],
+  "conferences": [
+    {
+      "title": "Solving ``pseudo-injective'' polynomial equations over finite dynamical systems",
+      "authors": "Antonio E. Porreca and Marius Rolland",
+      "booktitle": "Cellular Automata and Discrete Complex Systems",
+      "series": "AUTOMATA 2025",
+      "year": 2026,
+      "pages": "171--187",
+      "publisher": "Springer",
+      "doi": "10.1007/978-3-032-01570-9_12",
+      "abstract": "We consider the semiring of abstract finite dynamical systems up to isomorphism, with the operations of alternative and synchronous execution. We continue searching for efficient algorithms for solving polynomial equations of the form P (X) = B, with a constant side B, with the goal of decomposing complex behaviors into simpler systems. Taking inspiration from the characterization of injective polynomials P over dynamical systems, which is based on a condition on the lengths of limit cycles of their coefficients, we introduce a more general notion of pseudo-injectivity by relaxing this constraint. We prove that the associated equations can be solved efficiently, even in certain cases where the input is encoded in an exponentially more compact way.",
+      "pdf": "https://arxiv.org/pdf/2504.06986"
+    },
+    {
+      "title": "Injectivity of polynomials over finite discrete dynamical systems",
+      "authors": "Antonio E. Porreca and Marius Rolland",
+      "booktitle": "Crossroads of Computability and Logic: Insights, Inspirations, and Innovations",
+      "series": "CiE 2025",
+      "year": 2025,
+      "pages": "380--394",
+      "publisher": "Springer",
+      "doi": "10.1007/978-3-031-95908-0_27",
+      "abstract": "The analysis of observable phenomena (for instance, in biology or physics) allows the detection of dynamical behaviors and, conversely, starting from a desired behavior allows the design of objects exhibiting that behavior in engineering. The decomposition of dynamics into simpler subsystems allows us to simplify this analysis (or design). Here we focus on an algebraic approach to decomposition, based on alternative and synchronous execution as the sum and product operations; this gives rise to polynomial equations (with a constant side). In this article we focus on univariate, injective polynomials, giving a characterization in terms of the form of their coefficients and a polynomial-time algorithm for solving the associated equations.",
+      "pdf": "https://arxiv.org/pdf/2502.02360"
+    },
+    {
+      "title": "Roots in the semiring of finite deterministic dynamical systems",
+      "authors": "François Doré and Kevin Perrot and Antonio E. Porreca and Sara Riva and Marius Rolland",
+      "booktitle": "Cellular Automata and Discrete Complex Systems",
+      "series": "AUTOMATA 2024",
+      "year": 2024,
+      "pages": "120--132",
+      "publisher": "Springer",
+      "doi": "10.1007/978-3-031-65887-7_8",
+      "abstract": "Finite discrete-time dynamical systems (FDDS) model phe- nomena that evolve deterministically in discrete time. It is possible to define sum and product operations on these systems (disjoint union and direct product, respectively) giving a commutative semiring. This alge- braic structure led to several works employing polynomial equations to model hypotheses on phenomena modelled using FDDS. To solve these equations, algorithms for performing the division and computing k-th roots are needed. In this paper, we propose two polynomial algorithms for these tasks, under the condition that the result is a connected FDDS. This ultimately leads to an efficient solution to equations of the type AXk = B for connected X. These results are some of the important final steps for solving more general polynomial equations on FDDS.",
+      "pdf": "https://arxiv.org/pdf/2405.09236v1"
+    }
+  ],
   "preprints": [
     {
-      "title": "Transformer Architectures for Edge Computing",
-      "authors": "Nom, Auteur",
-      "journal": "arXiv",
-      "year": 2024,
-      "pdf": "#"
+      "title": "Non-trivial automata networks do exist that solve the global majority problem with the local majority rule",
+      "authors": "Pedro Paulo Balbi and Kévin Perrot and Marius Rolland and Eurico Ruivo",
+      "archiveprefix": "arXiv",
+      "eprint": "2603.19472",
+      "year": 2026,
+      "doi": "10.48550/arXiv.2603.19472",
+      "abstract": "The global majority problem, often referred to as the Density Classification Task, is a classical benchmark in the context of probing the computational capabilities of automata networks. It poses the simple yet challenging problem of determining, by totally local means, whether an arbitrary initial configuration of binary states can evolve to a final, homogeneous global configuration that reflects the initial global majority. Although it is known that in the specific case of cellular automata with periodic boundaries no rule is able to solve the problem, in other formulations solutions are known and, in others, the problem is still open. Aligned with the latter, here we explore the possibility of solving the problem with automata networks, operating only with the local majority rule, with a focus on identifying non-trivial cases where it can be solved and explaining why they do so.",
+      "pdf": "https://arxiv.org/abs/2603.19472"
+    },
+    {
+      "title": "Majority Boolean networks classifying density: structural characterization and complexity",
+      "authors": "Kévin Perrot and Marius Rolland",
+      "archiveprefix": "arXiv",
+      "eprint": "2602.13511",
+      "year": 2026,
+      "doi": "10.48550/arXiv.2602.13511",
+      "abstract": "Given a set of entities each holding a Boolean state, the Density Classification Task (DCT) asks them to converge to the most represented state. Given a directed graph of entities where each node synchronously updates to the local majority among its in-neighbors, we characterize in terms of three forbidden patterns when it solves DCT, and show that discovering these patterns is complete for NP and PSPACE.",
+      "pdf": "https://arxiv.org/pdf/2602.13511"
     }
   ],
-  "journals" : [
-    {
-      "title": "Transformer Architectures for Edge Computing",
-      "authors": "Nom, Auteur",
-      "journal": "arXiv",
-      "year": 2024,
-      "pdf": "#"
-    }
-  ],
-  "conferences" : [
-    {
-      "title": "Transformer Architectures for Edge Computing",
-      "authors": "Nom, Auteur",
-      "journal": "arXiv",
-      "year": 2024,
-      "pdf": "#"
-    }
-  ]
+  "phd": []
 }
-

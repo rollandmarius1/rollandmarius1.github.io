@@ -1,0 +1,225 @@
+/* conteneur global : couvre tout l'ecran */
+#modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  visibility: hidden;           /* caché mais existe dans la page */
+  pointer-events: none;         /* ne bloque pas les clics quand caché */
+}
+
+#modal-container.active {
+  visibility: visible;
+  pointer-events: auto;         /* réactive les clics quand visible */
+}
+
+/* Q' : overlay fond semi-transparent avec flou */
+#modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(var(--color-overlay), 0.5);
+  backdrop-filter: blur(5px);
+}
+
+/* P' : fenetre modale */
+#modal {
+  width: 85%;
+  height: 85%;
+  background-color: var(--color-bg-card);
+  border-radius: 15px;
+  padding: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.3s ease;
+  overflow: visible;
+  box-sizing: border-box;
+  border-left: 5px solid;
+  border: 2px solid var(--modal-color);
+  border-left: 8px solid var(--modal-color);
+}
+
+#modal-container.active #modal {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* couleur de la bordure selon le type */
+
+#modal.modal-journal  { 
+  border-left-color: var(--color-journal);
+  --modal-color: var(--color-journal); 
+}
+
+
+#modal.modal-conf{
+  border-left-color: var(--color-conf); 
+  --modal-color: var(--color-conf); 
+}
+
+#modal.modal-preprint{
+  border-left-color: var(--color-preprint);
+  --modal-color: var(--color-preprint);
+}
+
+#modal.modal-book {
+  border-left-color: var(--color-book);
+  --modal-color: var(--color-book);
+}
+
+#modal.modal-phd {
+  border-left-color: var(--color-phd);
+  --modal-color: var(--color-phd);
+}
+
+/* bouton X */
+#modal-close {
+  position: absolute;
+  top: -17px;    /* moitié du bouton (35/2) pour être à cheval */
+  right: -17px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid var(--modal-color);
+  background-color: var(--color-bg-card);
+  color: black;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#modal-close:hover {
+  background-color: var(--modal-color);
+  color: white;
+}
+
+/* zone scrollable à l'intérieur du modal */
+#modal-body {
+  overflow-y: auto;
+  height: 100%;
+}
+
+/* tableau de contenu */
+#modal-content {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#modal-content td {
+  padding: 0.5rem;
+  border-bottom: 2px solid var(--modal-color);
+  vertical-align: top;
+}
+
+#modal-content td:first-child {
+  font-weight: bold;
+  width: 120px;
+}
+
+/* boutons en bas */
+#modal-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+#modal-buttons button {
+  padding: 0.5rem 1.5rem;
+  border: 2px solid var(--modal-color);
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  background-color: transparent;
+  color: black;
+  transition: all 0.2s ease;
+}
+
+#modal-buttons button:hover {
+  background-color: var(--modal-color);
+  color: white;
+}
+
+/* popup BibTeX */
+#bibtex-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+#bibtex-container.active {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+#bibtex-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(var(--color-overlay), 0.3);
+  backdrop-filter: blur(2px);
+}
+
+#bibtex-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.3s ease;
+  background-color: var(--color-bg-card);
+  border-radius: 10px;
+  padding: 1.5rem;
+  max-width: 90%;
+  overflow: visible;
+}
+
+/* couleurs selon le type */
+#bibtex-modal.modal-journal  { border: 2px solid var(--color-journal);  border-left: 5px solid var(--color-journal);  --modal-color: var(--color-journal); }
+#bibtex-modal.modal-conf     { border: 2px solid var(--color-conf);     border-left: 5px solid var(--color-conf);     --modal-color: var(--color-conf); }
+#bibtex-modal.modal-preprint { border: 2px solid var(--color-preprint); border-left: 5px solid var(--color-preprint); --modal-color: var(--color-preprint); }
+#bibtex-modal.modal-book     { border: 2px solid var(--color-book);     border-left: 5px solid var(--color-book);     --modal-color: var(--color-book); }
+#bibtex-modal.modal-phd      { border: 2px solid var(--color-phd);      border-left: 5px solid var(--color-phd);      --modal-color: var(--color-phd); }
+
+/* bouton X du bibtex */
+#bibtex-close {
+  position: absolute;
+  top: -17px;
+  right: -17px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid var(--modal-color);
+  background-color: var(--color-bg-card);
+  color: black;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#bibtex-close:hover {
+  background-color: var(--modal-color);
+  color: white;
+}
+
+#bibtex-container.active #bibtex-modal {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#bibtex-content {
+  margin: 0;
+  font-family: monospace;
+  font-size: 0.85rem;
+  white-space: pre-wrap;
+  user-select: all;
+}

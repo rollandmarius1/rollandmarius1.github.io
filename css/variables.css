@@ -1,0 +1,16 @@
+/*variable global*/
+:root {
+  --color-book: #6B95C8;
+  --color-journal: #318CE7;
+  --color-conf: #1560BD;
+  --color-preprint: #2E5090;
+  --color-phd: #003366;
+  --color-bg-card: #f7f7f7;
+  --color-bg-card-hover: #c0c0c0;
+  --color-cv: #800080;
+  --color-teaching: #2E7D6E;
+  --color-overlay: 21, 58, 66;
+  --color-bg-grad-1: #0A2428;
+  --color-bg-grad-2: #153A42;
+  --color-bg-grad-3: #20505A;
+}

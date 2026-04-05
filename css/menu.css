@@ -1,0 +1,33 @@
+#menu {
+  position: static;
+  display: flex;
+  padding: 0 2px 0 2px;
+  margin-bottom: 20px;
+  justify-content: center;
+  border-bottom: 1px solid #203a43;
+}
+
+/* Liens du menu : style onglets */
+#menu a {
+  display: block;
+  color: #203a43;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  border-right: 1px solid #203a43;
+  transition: all 0.15s ease;
+}
+
+/* retire la bordure droite du dernier lien */
+#menu a:last-child {
+  border-right: none;
+}
+
+#menu a:hover {
+  color: var(--color-journal);
+}
+
+#menu a.active {
+  color: var(--color-journal);
+}

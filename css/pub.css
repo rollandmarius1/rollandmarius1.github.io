@@ -1,0 +1,203 @@
+/*centre le contenu*/
+#content {
+  padding: 40px;
+  flex: 1;
+}
+
+
+/*titre*/
+h1 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 0.5rem;
+  margin-top: -1.5rem;
+}
+
+/* sous-titre */
+h2, h2.journal, h2.preprint, h2.conf  {
+  display: table;
+  color: #34495e;
+  border-bottom: 2px solid;
+  padding-bottom: 0.5rem;
+}
+
+/* souligne les sous-titre*/
+/* le . en CSS veux dire et,
+ pour que les prpriété 
+ s'applique il faut que 
+ l'objet HTML est les deux class*/
+
+h2.journal {
+  border-bottom-color: var(--color-journal);
+}
+
+h2.preprint {
+  border-bottom-color: var(--color-preprint);
+}
+
+h2.conf {
+  border-bottom-color: var(--color-conf);
+}
+
+h2.book {
+  border-bottom-color: var(--color-book);
+}
+
+h2.phd {
+  border-bottom-color: var(--color-phd);
+}
+
+/*titre dans carte*/
+h3{
+  color: #2c3e50;
+  margin-top: -0.5rem;  margin-bottom: 0.1rem;
+}
+
+/* contenu des cartes (hors titre) */
+.card-item .authors,
+.card-item .journal,
+.card-item .year {
+  font-size: 0.85rem;
+}
+
+
+/* definition des cartes*/
+.card-item{
+  cursor: pointer; /* rend la carte sensible au passage de la souris*/
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: var(--color-bg-card);
+  border-radius: 5px;
+  border-left: 5px solid;
+  transition: all 0.15s ease;
+  position: relative;   /* Permet aux before et aftter de se positionner par rapport à la carte */
+  overflow: hidden;      /* Cache before et after*/
+  z-index: 0;           /* derrière le texte */
+
+}
+
+
+.preprint-item  {
+  border-left-color: var(--color-preprint);
+}
+
+.journal-item{
+  border-left-color:  var(--color-journal);
+}
+
+.conf-item{
+  border-left-color: var(--color-conf)
+}
+
+.book-item {
+  border-left-color: var(--color-book);
+}
+
+.phd-item {
+  border-left-color: var(--color-phd);
+}
+
+/* pour faire la transition quand on passe la sourtis*/
+
+.card-item:hover {
+  background-color: var(--color-bg-card-hover);
+  border-left: none;
+  border-right: 5px solid;
+}
+
+.preprint-item:hover  {
+  border-right-color: var(--color-preprint);
+}
+
+.journal-item:hover{
+  border-right-color:  var(--color-journal);
+}
+
+.conf-item:hover{
+  border-right-color: var(--color-conf)
+}
+
+.book-item:hover {
+  border-right-color: var(--color-book);
+}
+
+.phd-item:hover {
+  border-right-color: var(--color-phd);
+}
+
+/* pour faire les transition des couleurs coté vers le centre*/
+.card-item::before,
+.card-item::after {
+  content: '';           /* oblige before et after a exister */
+  position: absolute;    /* positionne before et after par rapport à la carte*/
+  top: 0;                /* collé en haut */
+  bottom: 0;             /* collé en bas*/
+  width: 0%;             /* largeur 0 pour que cela soit caché au départ */
+  transition: width 0.3s ease;      
+  z-index: 1;   
+}
+
+.card-item.preprint-item::before,
+.card-item.preprint-item::after {
+  background-color: var(--color-preprint);  /* la couleur du type (journal, conf, etc.) */
+}
+
+.card-item.journal-item::before,
+.card-item.journal-item::after {
+  background-color: var(--color-journal);
+}
+
+.card-item.conf-item::before,
+.card-item.conf-item::after {
+  background-color: var(--color-conf);
+}
+
+.card-item.book-item::before,
+.card-item.book-item::after {
+  background-color: var(--color-book);
+}
+
+.card-item.phd-item::before,
+.card-item.phd-item::after {
+  background-color: var(--color-phd);
+}
+
+
+.card-item::before { left: 0; }   /* part de la gauche */
+.card-item::after  { right: 0; }  /* part de la droite */
+
+/* les truc deviennent actif quand on appuie dessus*/
+.card-item.active::before,
+.card-item.active::after {
+  width: 50%;   /*agrandi la taille des before et after quand il sont actif */
+
+}
+
+
+.pdf-link-conf,
+.pdf-link-preprint,
+.pdf-link-journal {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.3rem 0.8rem;
+  color: black;
+  text-decoration: none;
+  border-radius: 3px;
+  font-size: 0.9rem;
+}
+
+.pdf-link-conf     { background-color: var(--color-conf); }
+.pdf-link-preprint { background-color: var(--color-preprint); }
+.pdf-link-journal  { background-color: var(--color-journal); }
+
+
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+

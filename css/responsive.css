@@ -1,0 +1,52 @@
+/* Responsive : adaptation pour smartphones uniquement */
+/* Toutes les règles sont dans un media query,
+   rien ne s'applique sur PC */
+
+@media (max-width: 600px) {
+
+  /* La carte blanche prend toute la largeur */
+  #P-inner {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  #P {
+    padding: 0;
+  }
+
+  #content {
+    padding: 15px;
+  }
+
+  /* Menu : empilé verticalement */
+  #menu {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #menu a {
+    border-right: none;
+    border-bottom: 1px solid #203a43;
+  }
+
+  /* Popup presque plein écran */
+  #modal {
+    width: 90%;
+    height: 80%;
+    padding: 1rem;
+  }
+
+  /* Bouton X ajusté */
+  #modal-close {
+    top: -12px;
+    right: -12px;
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+
+  /* Boutons popup empilés */
+  #modal-buttons {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Q = arrière-plan */
+#Q {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(120deg, var(--color-bg-grad-1), var(--color-bg-grad-2), var(--color-bg-grad-3));
+  z-index: -1;
+}
+
+/* P = conteneur centré */
+#P {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+/* Carte blanche */
+#P-inner {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
+  min-height: 90vh;
+  background: white;
+  box-shadow: 0 100px 40px rgba(0,0,0,0.15);
+  border-radius: 0 0 8px 8px; /* arrondi seulement en bas */}
