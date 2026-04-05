@@ -61,7 +61,7 @@
       "year": 2026,
       "doi": "10.48550/arXiv.2603.19472",
       "abstract": "The global majority problem, often referred to as the Density Classification Task, is a classical benchmark in the context of probing the computational capabilities of automata networks. It poses the simple yet challenging problem of determining, by totally local means, whether an arbitrary initial configuration of binary states can evolve to a final, homogeneous global configuration that reflects the initial global majority. Although it is known that in the specific case of cellular automata with periodic boundaries no rule is able to solve the problem, in other formulations solutions are known and, in others, the problem is still open. Aligned with the latter, here we explore the possibility of solving the problem with automata networks, operating only with the local majority rule, with a focus on identifying non-trivial cases where it can be solved and explaining why they do so.",
-      "pdf": "https://arxiv.org/abs/2603.19472"
+      "pdf": "https://arxiv.org/pdf/2603.19472"
     },
     {
       "title": "Majority Boolean networks classifying density: structural characterization and complexity",

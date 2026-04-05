@@ -3,24 +3,25 @@
    - data : objet avec les données par type { journal: [...], conf: [...], preprint: [...] } */
 function activateCards(container, data) {
   container.querySelectorAll('.card-item').forEach(card => {
+    /* Variable pour stocker le moment où les volets commencent à se fermer */
+    let downTime = 0;
+
     /* Au clic (appui) : effet visuel sur la carte */
     card.addEventListener('mousedown', () => {
       card.classList.add('active');
+      downTime = Date.now();
     });
-    /* Au relâchement : retire l'effet et ouvre la popup.
-       card.dataset.type et card.dataset.index lisent les attributs
-       data-type et data-index qu'on a mis sur chaque carte */
+
+    /* Au relâchement : ouvre la popup dès que les volets sont fermés.
+       On calcule le temps restant depuis le mousedown */
     card.addEventListener('mouseup', () => {
       const type = card.dataset.type;
       const index = card.dataset.index;
-      /* Les volets restent fermés (on ne retire pas active).
-         On attend que la fermeture des volets soit terminée,
-         puis on ouvre la popup */
-      card.addEventListener('transitionend', (e) => {
-        if (e.propertyName === 'width') {
-          openModal(data[type], type, index);
-        }
-      }, { once: true });
+      const elapsed = Date.now() - downTime;
+      const remaining = Math.max(0, 300 - elapsed);
+      setTimeout(() => {
+        openModal(data[type], type, index);
+      }, remaining);
     });
   });
 }
@@ -57,8 +58,14 @@ function setupModalClose() {
     document.getElementById('modal-container').classList.remove('active');
     /* Petit délai pour que la popup disparaisse avant de rouvrir les volets */
     setTimeout(() => {
-      document.querySelectorAll('.card-item.active').forEach(c => c.classList.remove('active'));
-    }, 80);
+      document.querySelectorAll('.card-item.active').forEach(c => {
+        c.classList.remove('active');
+        /* Ajoute closing pour garder le style hover pendant le retour */
+        c.classList.add('closing');
+        /* Retire closing après un délai pour le retour progressif */
+        setTimeout(() => c.classList.remove('closing'), 525);
+      });
+    }, 120);
   });
 }
 
