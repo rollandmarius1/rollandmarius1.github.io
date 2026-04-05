@@ -6,12 +6,12 @@ const dataPath = "../data/"
    pour mettre en évidence le lien correspondant */
 function loadMenu(activePage) {
     const links = [
-      { href: "index.html",        label: "🏠 Accueil",        page: "index" },
-      { href: "cv.html",           label: "📄 CV",             page: "cv" },
-      { href: "teaching.html",     label: "👨‍🏫 Enseignements",  page: "teaching" },
-      { href: "publications.html", label: "📚 Publications",   page: "publications" }
+      { href: "index.html",        icon: "🏠", label: "Accueil",        page: "index" },
+      { href: "cv.html",           icon: "📄", label: "CV",             page: "cv" },
+      { href: "teaching.html",     icon: "👨‍🏫", label: "Enseignements",  page: "teaching" },
+      { href: "publications.html", icon: "📚", label: "Publications",   page: "publications" }
     ];
     document.getElementById("menu").innerHTML = links.map(l =>
-      `<a href="${htmlPath}${l.href}" class="${l.page === activePage ? 'active' : ''}">${l.label}</a>`
+      `<a href="${htmlPath}${l.href}" class="${l.page === activePage ? 'active' : ''}"><span class="menu-icon">${l.icon}</span><br>${l.label}</a>`
     ).join('');
 }
