@@ -29,6 +29,7 @@
 /* P' : fenetre modale */
 #modal {
   width: 85%;
+  max-width: 800px;
   height: 85%;
   background-color: var(--color-bg-card);
   border-radius: 15px;
