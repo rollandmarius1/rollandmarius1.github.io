@@ -7,6 +7,9 @@ on:
     paths:
       - 'biblio.bib'
 
+permissions:
+  contents: write
+
 jobs:
   convert:
     runs-on: ubuntu-latest
