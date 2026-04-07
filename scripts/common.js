@@ -6,7 +6,7 @@ const dataPath = "../data/"
    pour mettre en évidence le lien correspondant */
 function loadMenu(activePage) {
     const links = [
-      { href: "index.html",        icon: "🏠", label: "Accueil",        page: "index" },
+      { href: "home.html",         icon: "🏠", label: "Accueil",        page: "index" },
       { href: "cv.html",           icon: "📄", label: "CV",             page: "cv" },
       { href: "teaching.html",     icon: "👨‍🏫", label: "Enseignements",  page: "teaching" },
       { href: "publications.html", icon: "📚", label: "Publications",   page: "publications" }
