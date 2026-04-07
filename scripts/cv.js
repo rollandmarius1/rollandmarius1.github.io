@@ -51,7 +51,9 @@ async function loadCV() {
       const screenCenterY = window.innerHeight / 2;
       const dx = screenCenterX - cardCenterX;
       const dy = screenCenterY - cardCenterY;
-      card.style.transform = `translate(${dx}px, ${dy}px) scale(1.2)`;
+      const w = window.innerWidth;
+      const scale = w <= 600 ? 1.1 : w >= 1200 ? 1.5 : 1.2;
+      card.style.transform = `translate(${dx}px, ${dy}px) scale(${scale})`;
       card.classList.add('expanded');
       overlay.classList.add('active');
     });
