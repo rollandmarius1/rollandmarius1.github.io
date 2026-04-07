@@ -129,10 +129,12 @@ h4 {
   margin-bottom: 0.3rem;
 }
 
-.card-item:hover .period {
+.card-item:hover .period,
+.card-item.expanded .period {
   color: var(--color-text-secondary-hover);
 }
 
-.card-item:hover .description {
+.card-item:hover .description,
+.card-item.expanded .description {
   color: var(--color-text-tertiary-hover);
 }
