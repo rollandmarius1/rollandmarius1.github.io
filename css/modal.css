@@ -224,3 +224,16 @@
   white-space: pre-wrap;
   user-select: all;
 }
+
+/* Lien DOI : icône cliquable à côté de la valeur */
+.doi-link {
+  text-decoration: none;
+  margin-left: 0.4rem;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+  display: inline-block;
+}
+
+.doi-link:hover {
+  transform: scale(1.2);
+}

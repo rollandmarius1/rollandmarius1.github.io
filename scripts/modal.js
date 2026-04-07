@@ -163,7 +163,7 @@ function openModal(data, type, index, originX, originY) {
   add('Volume', item.volume);
   add('Pages', item.pages);
   add('Éditeur', item.publisher);
-  add('DOI', item.doi);
+  add('DOI', item.doi ? `${item.doi} <a href="https://doi.org/${item.doi}" target="_blank" class="doi-link" title="Ouvrir le DOI">🔗</a>` : '');
   add('Abstract', item.abstract);
 
   content.innerHTML = rows;
