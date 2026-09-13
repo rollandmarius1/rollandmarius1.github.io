@@ -31,9 +31,12 @@ function setupTeachingModalClose() {
 }
 
 /* Construit le chemin vers un fichier pédagogique.
-   Ex: ../materiel_pedagogique/2024/Algorithmique Avancée/CM/1.pdf */
+   La clé du JSON est une période ("2026-2027") alors que le dossier porte
+   l'année de rentrée : on ne garde que la partie avant le tiret.
+   Ex: ../materiel_pedagogique/2026/Initiation au génie logiciel/TD/1.pdf */
 function materialPath(year, course, type, num) {
-  return `../materiel_pedagogique/${year}/${course}/${type}/${num}.pdf`;
+  const dir = String(year).split('-')[0];
+  return `../materiel_pedagogique/${dir}/${course}/${type}/${num}.pdf`;
 }
 
 /* Crée un bouton avec son sous-menu déroulant */
