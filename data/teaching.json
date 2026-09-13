@@ -1,4 +1,28 @@
 {
+ "2026-2027": [
+    {
+      "course": "Architecture des ordinateurs",
+      "type": "prat",
+      "level": "L2",
+      "hours": "9h TD + 12h TP",
+      "description": "Architecture matérielle, circuits logiques, assembleur.",
+      "details": "Ce cours présente les fonctionnements et la conception des circuits de base d'un ordinateur. Fonctionnement d'un ordinateur : circuits combinatoires, séquentiels, mémoire, flux de données et instructions. Machine de Mealy : passage d'un programme à une machine. Assembleur : jeux d'instruction, registres, principe de codage. Compétences visées : identifier et caractériser les principaux éléments fonctionnels et l'architecture matérielle d'un ordinateur, écrire des routines simples en langage machine.",
+      "cm": 0,
+      "td": 9,
+      "tp": 24
+    },
+    {
+      "course": "Initiation au génie logiciel",
+      "type": "prat",
+      "level": "L3",
+      "hours": "9h CM + 6h TD + 30h TP",
+      "description": "Bonnes pratiques de développement, tests, gestion de projet.",
+      "details": "La conception consiste à donner à un projet de programmation une organisation souple, mais structurante. La modularité intelligente est une clé de voûte de la conception. Contenu : principes SOLID (SRP, OCP, LSP, ISP, DIP), patrons de conceptions (Factory, Strategy, Template method, Decorator, Composite, State, Adapter, Builder, Command, Chain of responsibility, Iterator, Observer, Proxy, Bridge, Visitor, Singleton), diagrammes de classes UML, tests unitaires, refactoring, documentation et spécification.",
+      "cm": 9,
+      "td": 6,
+      "tp": 30
+    },
+  ],
   "2025-2026": [
     {
       "course": "Architecture des ordinateurs",
