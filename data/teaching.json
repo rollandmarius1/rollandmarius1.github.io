@@ -20,7 +20,7 @@
       "details": "La conception consiste à donner à un projet de programmation une organisation souple, mais structurante. La modularité intelligente est une clé de voûte de la conception. Contenu : principes SOLID (SRP, OCP, LSP, ISP, DIP), patrons de conceptions (Factory, Strategy, Template method, Decorator, Composite, State, Adapter, Builder, Command, Chain of responsibility, Iterator, Observer, Proxy, Bridge, Visitor, Singleton), diagrammes de classes UML, tests unitaires, refactoring, documentation et spécification.",
       "cm": 0,
       "td": 1,
-      "tp": 0
+      "tp": 1
     }
   ],
   "2025-2026": [
