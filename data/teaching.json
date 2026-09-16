@@ -1,12 +1,38 @@
 {
   "2026-2027": [
     {
+      "course": "Introduction à la science informatique",
+      "type": "theo",
+      "level": "L1",
+      "hours": "8h CM + 34h TD + 36h TP",
+      "description": "programmation basique, algorithmique, graphe, automate fini.",
+      "details": [
+        "Découvrir la science du calcul, en utilisant la programmation en Python pour illustrer les concepts d’algorithmes, leurs limites et leurs applications à des problèmes divers.",
+        "- Introduction aux algorithmes et aux instructions Python : variables, fonctions, conditions, boucles conditionnelles, itérations avec range.",
+        "- Codage des entiers (bases 2, 10 et 16), des chaînes de caractères (opérateur de concaténation) et des images.",
+        "- Introduction des tableaux unidimensionnels (append, pop, concaténation, création par compréhension, pas de slice, pas d’itérateur, pas de [0]*n), algorithmes de recherche séquentielle et dichotomique, tris par insertion et fusion, notions de complexité algorithmique.",
+        "- Algorithmes récursifs simples (exponentiation naïve et rapide, test de tri, recherches séquentielle et dichotomique).",
+        "- Modélisation par graphes (matrices d’adjacence) et algorithmes de parcours en largeur, coloration de graphes (algorithme glouton).",
+        "- Modélisation par arbres d’arité non bornée (à l’aide de tableaux d’associations) et algorithmes récursifs de parcours en profondeur, applications aux expressions arithmétiques, aux arborescences de fichiers et au codage de texte de longueur variable, interprétation d’un petit langage de programmation impératif.",
+        "- Introduction à la programmation fonctionnelle en Python et preuve d'indécidabilité du problème de l’arrêt."
+      ],
+      "cm": 0,
+      "td": 0,
+      "tp": 0
+    },
+    {
       "course": "Architecture des ordinateurs",
       "type": "prat",
       "level": "L2",
       "hours": "9h TD + 12h TP",
       "description": "Architecture matérielle, circuits logiques, assembleur.",
-      "details": "Ce cours présente les fonctionnements et la conception des circuits de base d'un ordinateur. Fonctionnement d'un ordinateur : circuits combinatoires, séquentiels, mémoire, flux de données et instructions. Machine de Mealy : passage d'un programme à une machine. Assembleur : jeux d'instruction, registres, principe de codage. Compétences visées : identifier et caractériser les principaux éléments fonctionnels et l'architecture matérielle d'un ordinateur, écrire des routines simples en langage machine.",
+      "details": [
+        "Ce cours présente les fonctionnements et la conception des circuits de base d'un ordinateur.",
+        "- Fonctionnement d'un ordinateur : circuits combinatoires, séquentiels, mémoire, flux de données et instructions.",
+        "- Machine de Mealy : passage d'un programme à une machine.",
+        "- Assembleur : jeux d'instruction, registres, principe de codage.",
+        "Compétences visées : identifier et caractériser les principaux éléments fonctionnels et l'architecture matérielle d'un ordinateur, écrire des routines simples en langage machine."
+      ],
       "cm": 0,
       "td": 0,
       "tp": 0
@@ -17,7 +43,15 @@
       "level": "L3",
       "hours": "9h CM + 6h TD + 30h TP",
       "description": "Bonnes pratiques de développement, tests, gestion de projet.",
-      "details": "La conception consiste à donner à un projet de programmation une organisation souple, mais structurante. La modularité intelligente est une clé de voûte de la conception. Contenu : principes SOLID (SRP, OCP, LSP, ISP, DIP), patrons de conceptions (Factory, Strategy, Template method, Decorator, Composite, State, Adapter, Builder, Command, Chain of responsibility, Iterator, Observer, Proxy, Bridge, Visitor, Singleton), diagrammes de classes UML, tests unitaires, refactoring, documentation et spécification.",
+      "details": [
+        "La conception consiste à donner à un projet de programmation une organisation souple, mais structurante. La modularité intelligente est une clé de voûte de la conception.",
+        "Contenu :",
+        "- Principes SOLID (SRP, OCP, LSP, ISP, DIP).",
+        "- Patrons de conceptions (Factory, Strategy, Template method, Decorator, Composite, State, Adapter, Builder, Command, Chain of responsibility, Iterator, Observer, Proxy, Bridge, Visitor, Singleton).",
+        "- Diagrammes de classes UML.",
+        "- Tests unitaires, refactoring.",
+        "- Documentation et spécification."
+      ],
       "cm": 0,
       "td": 1,
       "tp": 1
@@ -30,7 +64,13 @@
       "level": "L2",
       "hours": "9h TD + 12h TP",
       "description": "Architecture matérielle, circuits logiques, assembleur.",
-      "details": "Ce cours présente les fonctionnements et la conception des circuits de base d'un ordinateur. Fonctionnement d'un ordinateur : circuits combinatoires, séquentiels, mémoire, flux de données et instructions. Machine de Mealy : passage d'un programme à une machine. Assembleur : jeux d'instruction, registres, principe de codage. Compétences visées : identifier et caractériser les principaux éléments fonctionnels et l'architecture matérielle d'un ordinateur, écrire des routines simples en langage machine.",
+      "details": [
+        "Ce cours présente les fonctionnements et la conception des circuits de base d'un ordinateur.",
+        "- Fonctionnement d'un ordinateur : circuits combinatoires, séquentiels, mémoire, flux de données et instructions.",
+        "- Machine de Mealy : passage d'un programme à une machine.",
+        "- Assembleur : jeux d'instruction, registres, principe de codage.",
+        "Compétences visées : identifier et caractériser les principaux éléments fonctionnels et l'architecture matérielle d'un ordinateur, écrire des routines simples en langage machine."
+      ],
       "cm": 0,
       "td": 0,
       "tp": 0
@@ -41,7 +81,15 @@
       "level": "L3",
       "hours": "15h TP",
       "description": "Bonnes pratiques de développement, tests, gestion de projet.",
-      "details": "La conception consiste à donner à un projet de programmation une organisation souple, mais structurante. La modularité intelligente est une clé de voûte de la conception. Contenu : principes SOLID (SRP, OCP, LSP, ISP, DIP), patrons de conceptions (Factory, Strategy, Template method, Decorator, Composite, State, Adapter, Builder, Command, Chain of responsibility, Iterator, Observer, Proxy, Bridge, Visitor, Singleton), diagrammes de classes UML, tests unitaires, refactoring, documentation et spécification.",
+      "details": [
+        "La conception consiste à donner à un projet de programmation une organisation souple, mais structurante. La modularité intelligente est une clé de voûte de la conception.",
+        "Contenu :",
+        "- Principes SOLID (SRP, OCP, LSP, ISP, DIP).",
+        "- Patrons de conceptions (Factory, Strategy, Template method, Decorator, Composite, State, Adapter, Builder, Command, Chain of responsibility, Iterator, Observer, Proxy, Bridge, Visitor, Singleton).",
+        "- Diagrammes de classes UML.",
+        "- Tests unitaires, refactoring.",
+        "- Documentation et spécification."
+      ],
       "cm": 0,
       "td": 0,
       "tp": 0
@@ -52,7 +100,13 @@
       "level": "M1",
       "hours": "9h TD + 9h TP",
       "description": "Classes de complexité, réductions, NP-complétude.",
-      "details": "La complexité algorithmique est un pilier de la science informatique. Dans ce cours nous abordons les premiers éléments de cette théorie, pour tendre vers la question : est-ce que P=NP ? En pratique nous apprenons à utiliser un solveur pour la résolution de problèmes difficiles. Contenu : rappels d'analyse de complexité, complexité dans le pire cas, notion de problèmes (décision, recherche, dénombrement, énumération, optimisation), classes de complexité P, NP, coNP, PSPACE, EXP, distinctions connues (théorèmes de hiérarchie) et conjectures, exemples de problèmes, utilisation d'un solver (modélisation SAT, CSP). Responsable : Kévin Perrot.",
+      "details": [
+        "La complexité algorithmique est un pilier de la science informatique. Dans ce cours nous abordons les premiers éléments de cette théorie, pour tendre vers la question : est-ce que P=NP ? En pratique nous apprenons à utiliser un solveur pour la résolution de problèmes difficiles.",
+        "Contenu :",
+        "- Rappels d'analyse de complexité, complexité dans le pire cas.",
+        "- Notion de problèmes (décision, recherche, dénombrement, énumération, optimisation).",
+        "- Classes de complexité P, NP, coNP, PSPACE, EXP, distinctions connues (théorèmes de hiérarchie) et conjectures, exemples de problèmes.",
+        "- Utilisation d'un solver (modélisation SAT, CSP)."      ],
       "cm": 0,
       "td": 0,
       "tp": 0
@@ -76,7 +130,15 @@
       "level": "L3",
       "hours": "24h TP",
       "description": "Conception orientée objet, design patterns, programmation en Java.",
-      "details": "La conception consiste à donner à un projet de programmation une organisation souple, mais structurante. La modularité intelligente est une clé de voûte de la conception. Contenu : principes SOLID (SRP, OCP, LSP, ISP, DIP), patrons de conceptions (Factory, Strategy, Template method, Decorator, Composite, State, Adapter, Builder, Command, Chain of responsibility, Iterator, Observer, Proxy, Bridge, Visitor, Singleton), diagrammes de classes UML, tests unitaires, refactoring, documentation et spécification.",
+      "details": [
+        "La conception consiste à donner à un projet de programmation une organisation souple, mais structurante. La modularité intelligente est une clé de voûte de la conception.",
+        "Contenu :",
+        "- Principes SOLID (SRP, OCP, LSP, ISP, DIP).",
+        "- Patrons de conceptions (Factory, Strategy, Template method, Decorator, Composite, State, Adapter, Builder, Command, Chain of responsibility, Iterator, Observer, Proxy, Bridge, Visitor, Singleton).",
+        "- Diagrammes de classes UML.",
+        "- Tests unitaires, refactoring.",
+        "- Documentation et spécification."
+      ],
       "cm": 0,
       "td": 0,
       "tp": 0
@@ -87,7 +149,14 @@
       "level": "L3",
       "hours": "24h TD + 18h TP",
       "description": "Algorithmes avancés, structures de données, complexité.",
-      "details": "Graphes : parcours en largeur et en profondeur, tri topologique, composantes fortement connexes, flots maximums, flot de coût minimum, circulations avec demandes. Programmation dynamique : PLSC, Warshall-Floyd, structure secondaire d'un ARN, arbres binaires de recherche optimaux. Diviser pour régner : Master Théorème, multiplication d'entiers, élément k-minimal, paire de points les plus proches. Algorithmes d'approximation : ordonnancement de tâches, bin packing, voyageur de commerce. Algorithmes randomisés : problème de l'embauche, tri rapide, coupe min d'un graphe. Balayage : intersection de segments, triangulation d'un polygone simple.",
+      "details": [
+        "- Graphes : parcours en largeur et en profondeur, tri topologique, composantes fortement connexes, flots maximums, flot de coût minimum, circulations avec demandes.",
+        "- Programmation dynamique : PLSC, Warshall-Floyd, structure secondaire d'un ARN, arbres binaires de recherche optimaux.",
+        "- Diviser pour régner : Master Théorème, multiplication d'entiers, élément k-minimal, paire de points les plus proches.",
+        "- Algorithmes d'approximation : ordonnancement de tâches, bin packing, voyageur de commerce.",
+        "- Algorithmes randomisés : problème de l'embauche, tri rapide, coupe min d'un graphe.",
+        "- Balayage : intersection de segments, triangulation d'un polygone simple."
+      ],
       "cm": 0,
       "td": 0,
       "tp": 0
@@ -100,7 +169,14 @@
       "level": "L1",
       "hours": "18h TD + 24h TP",
       "description": "Introduction à la programmation en Java.",
-      "details": "Cet enseignement porte sur les principes fondamentaux de la programmation, basé sur le langage Java. Contenu : introduction au langage Java et structures de contrôle de base (variables, types primitifs, String, main, saisies, fonctions, conditionnelles, boucles, tableaux, boucle for-each, récursivité), introduction à la programmation objets (définition d'objets, instanciations, méthodes, attributs, attributs et méthodes statiques, méthodes factory, boxing), interfaces et polymorphisme, collections.",
+      "details": [
+        "Cet enseignement porte sur les principes fondamentaux de la programmation, basé sur le langage Java.",
+        "Contenu :",
+        "- Introduction au langage Java et structures de contrôle de base (variables, types primitifs, String, main, saisies, fonctions, conditionnelles, boucles, tableaux, boucle for-each, récursivité).",
+        "- Introduction à la programmation objets (définition d'objets, instanciations, méthodes, attributs, attributs et méthodes statiques, méthodes factory, boxing).",
+        "- Interfaces et polymorphisme.",
+        "- Collections."
+      ],
       "cm": 0,
       "td": 0,
       "tp": 0

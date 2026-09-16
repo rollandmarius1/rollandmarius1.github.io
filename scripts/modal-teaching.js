@@ -51,6 +51,28 @@ function createMaterialButton(label, count, year, course, type) {
   return html;
 }
 
+/* Convertit le texte de "details" en HTML : les lignes commençant par
+   un tiret deviennent des puces, les autres des paragraphes */
+function formatDetails(details) {
+  if (!details) return '';
+  const lignes = (Array.isArray(details) ? details.join('\n') : details).split('\n');
+  let html = '';
+  let dansListe = false;
+  for (const ligne of lignes) {
+    const texte = ligne.trim();
+    if (texte === '') continue;
+    if (texte.startsWith('-') || texte.startsWith('*')) {
+      if (!dansListe) { html += '<ul>'; dansListe = true; }
+      html += `<li>${texte.slice(1).trim()}</li>`;
+    } else {
+      if (dansListe) { html += '</ul>'; dansListe = false; }
+      html += `<p>${texte}</p>`;
+    }
+  }
+  if (dansListe) html += '</ul>';
+  return html;
+}
+
 /* Ouvre la popup avec les infos du cours */
 function openTeachingModal(item, type, year, originX, originY) {
   const modal = document.getElementById('modal');
@@ -65,7 +87,7 @@ function openTeachingModal(item, type, year, originX, originY) {
       <tr><td>Volume</td><td>${item.hours}</td></tr>
       <tr><td>Description</td><td>${item.description}</td></tr>
     </table>
-    <p style="margin-top: 1rem;">${item.details || ''}</p>
+    <div class="modal-details">${formatDetails(item.details)}</div>
   `;
 
   /* Boutons CM/TD/TP conditionnels avec sous-menu */

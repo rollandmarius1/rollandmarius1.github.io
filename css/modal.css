@@ -122,6 +122,24 @@
   width: 120px;
 }
 
+/* zone "details" : paragraphes et puces */
+.modal-details {
+  margin-top: 1rem;
+}
+
+.modal-details p {
+  margin: 0 0 0.6rem;
+}
+
+.modal-details ul {
+  margin: 0 0 0.6rem;
+  padding-left: 1.5rem;
+}
+
+.modal-details li {
+  margin-bottom: 0.3rem;
+}
+
 /* boutons en bas */
 #modal-buttons {
   margin-top: 1.5rem;
