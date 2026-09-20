@@ -53,7 +53,7 @@
         "- Documentation et spécification."
       ],
       "cm": 0,
-      "td": 1,
+      "td": 2,
       "tp": 1
     }
   ],
@@ -106,7 +106,8 @@
         "- Rappels d'analyse de complexité, complexité dans le pire cas.",
         "- Notion de problèmes (décision, recherche, dénombrement, énumération, optimisation).",
         "- Classes de complexité P, NP, coNP, PSPACE, EXP, distinctions connues (théorèmes de hiérarchie) et conjectures, exemples de problèmes.",
-        "- Utilisation d'un solver (modélisation SAT, CSP)."      ],
+        "- Utilisation d'un solver (modélisation SAT, CSP)."
+      ],
       "cm": 0,
       "td": 0,
       "tp": 0
