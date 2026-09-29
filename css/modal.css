@@ -243,6 +243,25 @@
   user-select: all;
 }
 
+/* bouton "Copier" sous l'entrée BibTeX */
+#bibtex-copy {
+  margin-top: 1rem;
+  padding: 0.4rem 1.2rem;
+  border: 2px solid var(--modal-color);
+  border-radius: 5px;
+  background-color: transparent;
+  color: black;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#bibtex-copy:hover,
+#bibtex-copy.copied {
+  background-color: var(--modal-color);
+  color: white;
+}
+
 /* Lien DOI : icône cliquable à côté de la valeur */
 .doi-link {
   text-decoration: none;

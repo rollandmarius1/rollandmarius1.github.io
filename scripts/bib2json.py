@@ -13,6 +13,7 @@ Types BibTeX → catégories JSON :
 
 import sys
 import json
+import unicodedata
 import bibtexparser
 
 
@@ -56,11 +57,23 @@ def get_field(entry, key, default=""):
     return clean_latex(entry.get(key, default))
 
 
+def parse_authors(entry):
+    """Découpe le champ author en liste de {"nom": ..., "prenom": ...}.
+
+    Auteurs séparés par " and ", chacun écrit "Nom, Prénom".
+    """
+    authors = []
+    for name in get_field(entry, 'author').split(' and '):
+        nom, _, prenom = name.partition(',')
+        authors.append({"nom": nom.strip(), "prenom": prenom.strip()})
+    return authors
+
+
 def article_to_pub(entry):
     """@article → journals"""
     pub = {
         "title":     get_field(entry, 'title'),
-        "authors":   get_field(entry, 'author'),
+        "authors":   parse_authors(entry),
         "journal":   get_field(entry, 'journal'),
         "year":      int(get_field(entry, 'year', '0')),
         "volume":    get_field(entry, 'volume'),
@@ -79,7 +92,7 @@ def inproceedings_to_pub(entry):
     """@inproceedings → conferences"""
     pub = {
         "title":     get_field(entry, 'title'),
-        "authors":   get_field(entry, 'author'),
+        "authors":   parse_authors(entry),
         "booktitle": get_field(entry, 'booktitle'),
         "series":    get_field(entry, 'series'),
         "year":      int(get_field(entry, 'year', '0')),
@@ -98,7 +111,7 @@ def misc_to_pub(entry):
     """@misc → preprints"""
     pub = {
         "title":         get_field(entry, 'title'),
-        "authors":       get_field(entry, 'author'),
+        "authors":       parse_authors(entry),
         "archiveprefix": get_field(entry, 'archiveprefix'),
         "eprint":        get_field(entry, 'eprint'),
         "year":          int(get_field(entry, 'year', '0')),
@@ -115,7 +128,7 @@ def book_to_pub(entry):
     """@book → books"""
     pub = {
         "title":     get_field(entry, 'title'),
-        "authors":   get_field(entry, 'author'),
+        "authors":   parse_authors(entry),
         "publisher": get_field(entry, 'publisher'),
         "series":    get_field(entry, 'series'),
         "year":      int(get_field(entry, 'year', '0')),
@@ -133,7 +146,7 @@ def phdthesis_to_pub(entry):
     """@phdthesis → phd"""
     pub = {
         "title":   get_field(entry, 'title'),
-        "authors": get_field(entry, 'author'),
+        "authors": parse_authors(entry),
         "school":  get_field(entry, 'school'),
         "year":    int(get_field(entry, 'year', '0')),
         "doi":     get_field(entry, 'doi'),
@@ -143,6 +156,35 @@ def phdthesis_to_pub(entry):
     if url:
         pub["pdf"] = url
     return pub
+
+
+def base_key(pub):
+    """Clé BibTeX : nom du premier auteur, sans accent, + année."""
+    nom = unicodedata.normalize('NFD', pub['authors'][0]['nom'])
+    nom = ''.join(c for c in nom if c.isascii() and c.isalpha())
+    return nom + str(pub['year'])
+
+
+def assign_bibkeys(result):
+    """Ajoute le champ bibkey à chaque publication.
+
+    Suffixe a, b, c... quand plusieurs publications partagent la même
+    clé de base ; pas de suffixe si elle est unique.
+    """
+    pubs = [p for category in result.values() for p in category]
+
+    total = {}
+    for p in pubs:
+        total[base_key(p)] = total.get(base_key(p), 0) + 1
+
+    rank = {}
+    for p in pubs:
+        base = base_key(p)
+        if total[base] == 1:
+            p['bibkey'] = base
+        else:
+            p['bibkey'] = base + chr(ord('a') + rank.get(base, 0))
+            rank[base] = rank.get(base, 0) + 1
 
 
 # Mapping type BibTeX → fonction de conversion
@@ -182,6 +224,8 @@ def bib_to_json(bib_path, json_path):
     # Trie chaque catégorie par année décroissante
     for key in result:
         result[key].sort(key=lambda p: p['year'], reverse=True)
+
+    assign_bibkeys(result)
 
     with open(json_path, 'w', encoding='utf-8') as f:
         json.dump(result, f, ensure_ascii=False, indent=2)

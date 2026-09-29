@@ -74,23 +74,25 @@ function setupModalClose() {
   });
 }
 
-/* Génère une clé BibTeX à partir du premier auteur et de l'année.
-   Ex: "Dupont, Jean and Martin, Paul" + 2024 → "Dupont2024" */
-function generateBibtexKey(authors, year) {
-  const firstAuthor = authors.split(',')[0].trim().split(' ')[0];
-  return firstAuthor + year;
+/* Liste d'auteurs pour l'affichage : "Prénom Nom, Prénom Nom" */
+function formatAuthors(authors) {
+  return authors.map(a => `${a.prenom} ${a.nom}`.trim()).join(', ');
+}
+
+/* Liste d'auteurs au format BibTeX : "Nom, Prénom and Nom, Prénom" */
+function bibtexAuthors(authors) {
+  return authors.map(a => `${a.nom}, ${a.prenom}`).join(' and ');
 }
 
 /* Génère une entrée BibTeX à partir des données d'une publication.
-   - item : l'objet publication du JSON
+   - item : l'objet publication du JSON, dont bibkey est la clé
    - type : "journal", "conf" ou "preprint" → détermine le type BibTeX */
 function generateBibtex(item, type) {
   const bibtexType = { journal: 'article', conf: 'inproceedings', preprint: 'misc', book: 'book', phd: 'phdthesis' };
-  const key = generateBibtexKey(item.authors, item.year);
 
-  let bib = `@${bibtexType[type]}{${key},\n`;
+  let bib = `@${bibtexType[type]}{${item.bibkey},\n`;
   bib += `  title     = {${item.title}},\n`;
-  bib += `  author    = {${item.authors}},\n`;
+  bib += `  author    = {${bibtexAuthors(item.authors)}},\n`;
   if (item.journal)        bib += `  journal   = {${item.journal}},\n`;
   if (item.booktitle)      bib += `  booktitle = {${item.booktitle}},\n`;
   if (item.series)         bib += `  series    = {${item.series}},\n`;
@@ -114,10 +116,13 @@ function createBibtexModal() {
       <div id="bibtex-modal">
         <button id="bibtex-close">X</button>
         <pre id="bibtex-content"></pre>
+        <button id="bibtex-copy">Copier</button>
       </div>
     </div>
   `;
   document.body.insertAdjacentHTML('beforeend', html);
+
+  document.getElementById('bibtex-copy').addEventListener('click', copyBibtex);
 
   /* Ferme la popup BibTeX au clic sur l'overlay ou le bouton X */
   document.getElementById('bibtex-overlay').addEventListener('click', () => {
@@ -126,6 +131,32 @@ function createBibtexModal() {
   document.getElementById('bibtex-close').addEventListener('mouseup', () => {
     document.getElementById('bibtex-container').classList.remove('active');
   });
+}
+
+/* Copie l'entrée BibTeX dans le presse-papier et confirme sur le bouton.
+   navigator.clipboard n'existe qu'en HTTPS ou localhost : sinon on passe
+   par un textarea temporaire (méthode historique). */
+function copyBibtex() {
+  const btn = document.getElementById('bibtex-copy');
+  const text = document.getElementById('bibtex-content').textContent;
+
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text);
+  } else {
+    const tmp = document.createElement('textarea');
+    tmp.value = text;
+    document.body.appendChild(tmp);
+    tmp.select();
+    document.execCommand('copy');
+    tmp.remove();
+  }
+
+  btn.textContent = 'Copié !';
+  btn.classList.add('copied');
+  setTimeout(() => {
+    btn.textContent = 'Copier';
+    btn.classList.remove('copied');
+  }, 1500);
 }
 
 /* Ouvre la popup BibTeX avec le contenu généré */
@@ -152,7 +183,7 @@ function openModal(data, type, index, originX, originY) {
   const add = (label, value) => { if (value) rows += `<tr><td>${label}</td><td>${value}</td></tr>`; };
 
   add('Titre', item.title);
-  add('Auteurs', item.authors);
+  add('Auteurs', formatAuthors(item.authors));
   add('Revue', item.journal);
   add('Conférence', item.booktitle);
   add('Série', item.series);

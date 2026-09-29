@@ -16,7 +16,7 @@ function renderPublications(title, key, list) {
     html += `
         <div class="card-item ${key}-item" data-type="${key}" data-index="${i}">
             <h3>${p.title}</h3>
-            <div class="authors">${p.authors}</div>
+            <div class="authors">${formatAuthors(p.authors)}</div>
             <div class="venue">${getVenue(p, key)}</div>
             <div class="year">${p.year}</div>
         </div>

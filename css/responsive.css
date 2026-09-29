@@ -44,4 +44,10 @@
   #modal-buttons {
     flex-direction: column;
   }
+
+  /* Sans ça, align-items: stretch étire chaque groupe CM/TD/TP
+     sur toute la largeur, et le sous-menu avec */
+  #modal-buttons .material-btn-group {
+    align-self: flex-start;
+  }
 }
