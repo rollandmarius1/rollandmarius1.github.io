@@ -22,8 +22,9 @@ jobs:
         with:
           python-version: '3.12'
 
-      # Installe bibtexparser
-      - run: pip install bibtexparser
+      # Installe bibtexparser : la v2 a supprimé l'API utilisée par le script
+      # (bibtexparser.bparser / bibtexparser.load), on reste donc en 1.x
+      - run: pip install "bibtexparser<2"
 
       # Lance la conversion
       - run: python scripts/bib2json.py biblio.bib data/publications.json
