@@ -122,6 +122,16 @@
   width: 120px;
 }
 
+/* Les résumés arrivent de pandoc en vrais paragraphes : on resserre les
+   marges par défaut du navigateur, qui doubleraient le padding de la cellule */
+#modal-content td p {
+  margin: 0 0 0.6rem;
+}
+
+#modal-content td p:last-child {
+  margin-bottom: 0;
+}
+
 /* zone "details" : paragraphes et puces */
 .modal-details {
   margin-top: 1rem;
@@ -241,6 +251,11 @@
   font-size: 0.85rem;
   white-space: pre-wrap;
   user-select: all;
+  /* L'entrée est reprise telle quelle du .bib : elle peut être longue.
+     Le défilement reste sur le <pre>, car #bibtex-modal garde son
+     overflow visible pour le bouton X qui dépasse du cadre. */
+  max-height: 60vh;
+  overflow-y: auto;
 }
 
 /* bouton "Copier" sous l'entrée BibTeX */

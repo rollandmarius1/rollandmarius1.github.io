@@ -26,6 +26,15 @@ jobs:
       # (bibtexparser.bparser / bibtexparser.load), on reste donc en 1.x
       - run: pip install "bibtexparser<2"
 
+      # Installe pandoc, qui interprète le LaTeX des champs. Version épinglée
+      # depuis les releases officielles plutôt qu'apt, pour que la sortie ne
+      # change pas sous nos pieds d'une exécution à l'autre.
+      - name: Installer pandoc
+        run: |
+          curl -sSLo pandoc.deb https://github.com/jgm/pandoc/releases/download/3.12/pandoc-3.12-1-amd64.deb
+          sudo dpkg -i pandoc.deb
+          pandoc --version | head -1
+
       # Lance la conversion
       - run: python scripts/bib2json.py biblio.bib data/publications.json
 

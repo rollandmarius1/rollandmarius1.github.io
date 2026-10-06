@@ -1,8 +1,46 @@
+@phdthesis{mathese,
+	title={Des unrolls aux systèmes dynamiques totaux et partiels : algorithmes de résolution et énumérations des (in)équations polynomiales},
+	author={Rolland, Marius},
+	year={2026},
+	school={Aix-Marseille Université},
+	abstract={A finite, deterministic, discrete-time \emph{dynamical system} consists of a pair $(A, f_A)$ where $A$ is a finite set of states and $f_A : A \to A$ is a total function from $A$ to itself, called the \emph{transition function}.
+The latter defines the evolution of the system over time.
+These dynamics are described explicitly by its transition graph, whose vertices are the states of the system and which contains, for each state~$a \in A$, an arc~$(a, f_A(a))$ linking it to the next state.
+The general form of the dynamics of such a system consists of one or more \emph{limit cycles} of periodic states (for example, $(a, f_A(a), f_A^2(a), \ldots, f_A^n(a) = a)$ is a limit cycle of period~$n$), together with a transient regime of non-periodic states arranged in trees, whose root belongs to one of the states of a limit cycle.
+
+These systems, considered up to isomorphism, are called FDDSs and are particularly well suited to the scientific approach.
+Indeed, they are not only widely used to verify that a specification satisfies certain expected or required properties, but also to model and analyze natural phenomena, notably in physics and biology.
+It is also possible to describe standard deterministic models of computation in computer science, such as cellular automata or bounded-tape Turing machines, in the form of these systems.
+
+In the literature, it is known that FDDSs, equipped with sum (disjoint union) and product (direct product) operations, form a commutative semiring.
+We can therefore define a semiring of polynomials, as well as polynomial equations whose coefficients and variables are FDDSs.
+This type of equation is undecidable in the general case, but belongs to the class $\NP$ when one side of the equation is constant.
+Solving equations of the form $P(X_1,\ldots,X_n) = B$ then makes it possible to determine whether $B$ satisfies certain structural constraints, but also to exhibit an underlying dynamics.
+
+In this thesis, we focus essentially on the case where $P$ contains only a single variable.
+We provide a polynomial-time algorithm for determining the transient behaviors of all possible solutions of the equation $P(X) = B$.
+We then give a method for solving in polynomial time the equations $P(X) = B$ when $P$ satisfies a structural condition (injectivity, ``pseudo-injectivity'').
+We draw inspiration from this approach to highlight two parameters---the number of non-isomorphic connected components of $B$ and the smallest cycle length of a non-constant coefficient of $P$---which, when fixed, allow the equation $AX = B$ to be solved in polynomial time.
+This leads us to study over- and under-approximations of $B$.
+In other words, we introduce polynomial-time algorithms for solving the inequalities $P(X) \le B$ and $P(X) \ge B$.
+We also show that it is possible to enumerate the set of solutions of $P(X) \le B$ with polynomial delay between two solutions.
+Finally, we generalize some of our results to the case where systems are no longer described by total functions, but by partial functions.},
+	url={https://rollandmarius1.github.io/these.pdf}
+}
+
 @misc{porreca2026injectivepseudoinjectivepolynomialequations,
 	title={Injective and pseudo-injective polynomial equations: From permutations to dynamical systems}, 
 	author={Porreca, Antonio E. and Rolland, Marius},
 	year={2026},
 	eprint={2604.04065},
+	abstract={We study the computational complexity of decomposing finite discrete dynamical systems (FDDSs) in terms of the
+semiring operations of alternative and synchronous execution, which is useful for the analysis of discrete phenomena
+in science and engineering. More specifically, we investigate univariate polynomials of the form $𝑷(𝑿) = 𝑩$,
+that is with a constant side, first over the subsemiring of permutations and then over general FDDSs. We find a
+characterization of injective polynomials $𝑷$ and efficient algorithms for solving the associated equations. Then, we
+introduce the more general notion of pseudo-injective polynomial, which is based on a condition on the lengths of
+the limit cycles of its coefficients, and prove that the corresponding equations are also solvable efficiently. These
+results also apply even when permutations are encoded in an exponentially more compact way},
 	archivePrefix={arXiv},
 	primaryClass={cs.DM},
 	url={https://arxiv.org/abs/2604.04065}
@@ -37,17 +75,17 @@ These results are some of the important final steps for solving more general pol
 	pages={171--187},
 	series={AUTOMATA 2025},
 	publisher={Springer},
-	abstract={We consider the semiring of abstract finite dynamical systems
-up to isomorphism, with the operations of alternative and synchronous
-execution. We continue searching for efficient algorithms for solving
-polynomial equations of the form P (X) = B, with a constant side B,
-with the goal of decomposing complex behaviors into simpler systems.
-Taking inspiration from the characterization of injective polynomials P
-over dynamical systems, which is based on a condition on the lengths of
-limit cycles of their coefficients, we introduce a more general notion of
-pseudo-injectivity by relaxing this constraint. We prove that the associated
-equations can be solved efficiently, even in certain cases where the input
-is encoded in an exponentially more compact way.},
+	abstract={WWe consider the semiring of abstract finite dynamical systems up to isomorphism, 
+	with the operations of alternative and synchronous execution. 
+	We continue searching for efficient algorithms for solving polynomial 
+	equations of the form~$P(X)=B$, with a constant side~$B$, with the goal 
+	of decomposing complex behaviors into simpler systems. Taking inspiration 
+	from the characterization of injective polynomials~$P$ over dynamical systems, 
+	which is based on a condition on the lengths of limit cycles of their 
+	coefficients, we introduce a more general notion of pseudo-injectivity by 
+	relaxing this constraint. We prove that the associated equations can be 
+	solved efficiently, even in certain cases where the input is encoded in 
+	an exponentially more compact way.},
 	url={https://arxiv.org/pdf/2504.06986}
 }
 
@@ -67,11 +105,11 @@ define sum and product operations on these systems (disjoint union and
 direct product, respectively) giving a commutative semiring. This alge-
 braic structure led to several works employing polynomial equations to
 model hypotheses on phenomena modelled using FDDS. To solve these
-equations, algorithms for performing the division and computing k-th
+equations, algorithms for performing the division and computing $k$-th
 roots are needed. In this paper, we propose two polynomial algorithms
 for these tasks, under the condition that the result is a connected FDDS.
 This ultimately leads to an efficient solution to equations of the type
-AXk = B for connected X. These results are some of the important
+$AX^k = B$ for connected $X$. These results are some of the important
 final steps for solving more general polynomial equations on FDDS.},
 	url={https://arxiv.org/pdf/2405.09236v1}
 
@@ -87,17 +125,18 @@ final steps for solving more general polynomial equations on FDDS.},
 	pages={380--394},
 	series={CiE 2025},
 	publisher={Springer},
-	abstract={The analysis of observable phenomena (for instance, in biology
-or physics) allows the detection of dynamical behaviors and, conversely,
-starting from a desired behavior allows the design of objects exhibiting
-that behavior in engineering. The decomposition of dynamics into simpler
-subsystems allows us to simplify this analysis (or design). Here we focus
-on an algebraic approach to decomposition, based on alternative and
-synchronous execution as the sum and product operations; this gives rise
-to polynomial equations (with a constant side). In this article we focus
-on univariate, injective polynomials, giving a characterization in terms of
-the form of their coefficients and a polynomial-time algorithm for solving
-the associated equations.},
+	abstract={The analysis of observable phenomena 
+	(for instance, in biology or physics) allows the detection 
+	of dynamical behaviors and, conversely, starting from a 
+	desired behavior allows the design of objects exhibiting that 
+	behavior in engineering. The decomposition of dynamics into 
+	simpler subsystems allows us to simplify this analysis (or design). 
+	Here we focus on an algebraic approach to decomposition, based on 
+	alternative and synchronous execution as the sum and product operations; 
+	this gives rise to polynomial equations (with a constant side). 
+	In this article we focus on univariate, injective polynomials, 
+	giving a characterization in terms of the form of their coefficients 
+	and a polynomial-time algorithm for solving the associated equations.},
 	url={https://arxiv.org/pdf/2502.02360},
 }
 
@@ -108,16 +147,22 @@ the associated equations.},
       eprint={2603.19472},
       archivePrefix={arXiv},
       doi={10.48550/arXiv.2603.19472}, 
-	  abstract={The global majority problem, often referred to as the Density Classification Task, is a classical
-benchmark in the context of probing the computational capabilities of automata networks. It poses
-the simple yet challenging problem of determining, by totally local means, whether an arbitrary
-initial configuration of binary states can evolve to a final, homogeneous global configuration
-that reflects the initial global majority. Although it is known that in the specific case of cellular
-automata with periodic boundaries no rule is able to solve the problem, in other formulations
-solutions are known and, in others, the problem is still open. Aligned with the latter, here we
-explore the possibility of solving the problem with automata networks, operating only with the
-local majority rule, with a focus on identifying non-trivial cases where it can be solved and
-explaining why they do so.},
+	  abstract={The global majority problem, often 
+	  referred to as the Density Classification Task, 
+	  is a classical benchmark in the context of probing the 
+	  computational capabilities of automata networks. 
+	  It poses the simple yet challenging problem of determining,
+	   by totally local means, whether an arbitrary initial configuration 
+	   of binary states can evolve to a final, homogeneous global 
+	   configuration that reflects the initial global majority. 
+	   Although it is known that in the specific case of cellular 
+	   automata with periodic boundaries no rule is able to solve 
+	   the problem, in other formulations solutions are known and, 
+	   in others, the problem is still open. Aligned with the latter, 
+	   here we explore the possibility of solving the problem with automata 
+	   networks, operating only with the local majority rule, with a focus on 
+	   identifying non-trivial cases where it can be solved and explaining why 
+	   they do so.},
 	url={https://arxiv.org/abs/2603.19472}
 }
 
@@ -128,10 +173,12 @@ explaining why they do so.},
 	eprint={2602.13511},
 	archivePrefix={arXiv},
 	doi={10.48550/arXiv.2602.13511}, 
-	abstract={Given a set of entities each holding a Boolean state, the Density Classification
-Task (DCT) asks them to converge to the most represented state. Given a directed
-graph of entities where each node synchronously updates to the local majority among
-its in-neighbors, we characterize in terms of three forbidden patterns when it solves
-DCT, and show that discovering these patterns is complete for NP and PSPACE.},
+	abstract={Given a set of entities each holding a Boolean state,
+  the Density Classification Task (DCT) asks them to converge
+  to the most represented state.
+  Given a directed graph of entities
+  where each node synchronously updates to the local majority among its in-neighbors,
+  we characterize in terms of three forbidden patterns when it solves DCT,
+  and show that discovering these patterns is complete for $\NP$ and $\PSPACE$.},
 	url={https://arxiv.org/pdf/2602.13511}
 }

@@ -1,8 +1,8 @@
 {
   "name": "Marius Rolland",
-  "title": "Doctorant en Informatique",
+  "title": "ATER au DII d'Aix-Marseille Université",
   "affiliation": "Équipe CANA, LIS, Aix-Marseille Université",
-  "bio": "Je suis doctorant en informatique au sein de l'équipe CANA du Laboratoire d'Informatique et Systèmes (LIS) à Aix-Marseille Université, sous la direction de Kévin Perrot et Antonio E. Porreca. Mes recherches portent sur l'algèbre et l'algorithmique des systèmes dynamiques discrets finis, et plus particulièrement sur la résolution et l'énumération des (in)équations polynomiales dans le semi-anneau de ces systèmes.",
+  "bio": "Je suis ATER au Département d'Informatique et Interactions (DII) d'Aix-Marseille Université, rattaché à l'équipe CANA du Laboratoire d'Informatique et Systèmes (LIS). J'ai réalisé ma thèse sous la direction de Kévin Perrot et Antonio E. Porreca. Mes recherches portent sur l'algèbre et l'algorithmique des systèmes dynamiques discrets finis, et plus particulièrement sur la résolution et l'énumération des (in)équations polynomiales dans le semi-anneau de ces systèmes.",
   "email": "marius.rolland@lis-lab.fr",
   "photo": "../img/photo.jpg",
   "links": [

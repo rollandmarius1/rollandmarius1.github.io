@@ -79,35 +79,6 @@ function formatAuthors(authors) {
   return authors.map(a => `${a.prenom} ${a.nom}`.trim()).join(', ');
 }
 
-/* Liste d'auteurs au format BibTeX : "Nom, Prénom and Nom, Prénom" */
-function bibtexAuthors(authors) {
-  return authors.map(a => `${a.nom}, ${a.prenom}`).join(' and ');
-}
-
-/* Génère une entrée BibTeX à partir des données d'une publication.
-   - item : l'objet publication du JSON, dont bibkey est la clé
-   - type : "journal", "conf" ou "preprint" → détermine le type BibTeX */
-function generateBibtex(item, type) {
-  const bibtexType = { journal: 'article', conf: 'inproceedings', preprint: 'misc', book: 'book', phd: 'phdthesis' };
-
-  let bib = `@${bibtexType[type]}{${item.bibkey},\n`;
-  bib += `  title     = {${item.title}},\n`;
-  bib += `  author    = {${bibtexAuthors(item.authors)}},\n`;
-  if (item.journal)        bib += `  journal   = {${item.journal}},\n`;
-  if (item.booktitle)      bib += `  booktitle = {${item.booktitle}},\n`;
-  if (item.series)         bib += `  series    = {${item.series}},\n`;
-  if (item.school)         bib += `  school    = {${item.school}},\n`;
-  if (item.archiveprefix)  bib += `  archivePrefix = {${item.archiveprefix}},\n`;
-  if (item.eprint)         bib += `  eprint    = {${item.eprint}},\n`;
-  bib += `  year      = {${item.year}},\n`;
-  if (item.volume)    bib += `  volume    = {${item.volume}},\n`;
-  if (item.pages)     bib += `  pages     = {${item.pages}},\n`;
-  if (item.publisher) bib += `  publisher = {${item.publisher}},\n`;
-  if (item.doi)       bib += `  doi       = {${item.doi}},\n`;
-  bib += `}`;
-  return bib;
-}
-
 /* Crée la popup BibTeX et l'ajoute à la page */
 function createBibtexModal() {
   const html = `
@@ -159,10 +130,11 @@ function copyBibtex() {
   }, 1500);
 }
 
-/* Ouvre la popup BibTeX avec le contenu généré */
+/* Ouvre la popup BibTeX.
+   L'entrée vient telle quelle de biblio.bib (champ bibtex produit par
+   bib2json.py) : rien n'est reconstruit ici, donc rien n'est perdu. */
 function openBibtexModal(item, type) {
-  const bibtex = generateBibtex(item, type);
-  document.getElementById('bibtex-content').textContent = bibtex;
+  document.getElementById('bibtex-content').textContent = item.bibtex;
   document.getElementById('bibtex-modal').className = 'modal-' + type;
   document.getElementById('bibtex-container').classList.add('active');
 }
