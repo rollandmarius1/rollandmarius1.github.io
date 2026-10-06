@@ -1,9 +1,15 @@
 [
   {
+    "period": "2026-2027",
+    "title": "ATER en informatique",
+    "institution": "Département d'Informatique et Interactions, Aix-Marseille Université",
+    "description": "Attaché temporaire d'enseignement et de recherche, rattaché à l'équipe CANA du Laboratoire d'Informatique et Systèmes (LIS)."
+  },
+  {
     "period": "2023-2026",
     "title": "Doctorat en informatique",
     "institution": "Aix-Marseille Université",
-    "description": "Sujet : « Des unrolls aux systèmes dynamiques : algorithmes de résolution et énumération des (in)équations polynomiales ». Sous contrat CNRS, attaché à l'équipe CANA du LIS. Directeurs : Kévin Perrot, Antonio E. Porreca."
+    "description": "Sujet : « Des unrolls aux systèmes dynamiques totaux et partiels : algorithmes de résolution et énumérations des (in)équations polynomiales ». Sous contrat CNRS, attaché à l'équipe CANA du LIS. Directeurs : Kévin Perrot, Antonio E. Porreca."
   },
   {
     "period": "2021-2023",
