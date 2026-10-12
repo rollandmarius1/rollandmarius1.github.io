@@ -24,7 +24,7 @@
       "course": "Architecture des ordinateurs",
       "type": "prat",
       "level": "L2",
-      "hours": "9h TD + 12h TP",
+      "hours": "9h TD + 24h TP",
       "description": "Architecture matérielle, circuits logiques, assembleur.",
       "details": [
         "Ce cours présente les fonctionnements et la conception des circuits de base d'un ordinateur.",
